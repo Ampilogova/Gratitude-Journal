@@ -7,4 +7,9 @@ target 'Gratitude Journal' do
 
   # Pods for Gratitude Journal
 
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
+
 end
