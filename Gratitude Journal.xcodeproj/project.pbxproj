@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		079EE5F8DAEE7968C54F1C0F /* Pods_Gratitude_Journal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2C354590D18B4BEC171C62 /* Pods_Gratitude_Journal.framework */; };
 		CE08797127862D0400C3105E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797027862D0400C3105E /* AppDelegate.swift */; };
 		CE08797327862D0400C3105E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797227862D0400C3105E /* SceneDelegate.swift */; };
 		CE08797527862D0400C3105E /* GratitudeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797427862D0400C3105E /* GratitudeViewController.swift */; };
@@ -44,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85869AFD10D0D3E3E31AA170 /* Pods-Gratitude Journal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gratitude Journal.release.xcconfig"; path = "Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal.release.xcconfig"; sourceTree = "<group>"; };
+		9C9F53AF006A3CE1FB3A4DB4 /* Pods-Gratitude Journal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gratitude Journal.debug.xcconfig"; path = "Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal.debug.xcconfig"; sourceTree = "<group>"; };
+		AE2C354590D18B4BEC171C62 /* Pods_Gratitude_Journal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gratitude_Journal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE08796D27862D0400C3105E /* Gratitude Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gratitude Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE08797027862D0400C3105E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE08797227862D0400C3105E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,17 +91,30 @@
 				CE25F14727E508EF00A2666E /* FirebaseStorage in Frameworks */,
 				CE25F14127E508EF00A2666E /* FirebaseAnalytics in Frameworks */,
 				CE25F14327E508EF00A2666E /* FirebaseAuth in Frameworks */,
+				079EE5F8DAEE7968C54F1C0F /* Pods_Gratitude_Journal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C675FCBF316D766C4C0879DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C9F53AF006A3CE1FB3A4DB4 /* Pods-Gratitude Journal.debug.xcconfig */,
+				85869AFD10D0D3E3E31AA170 /* Pods-Gratitude Journal.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE08796427862D0400C3105E = {
 			isa = PBXGroup;
 			children = (
 				CE08796F27862D0400C3105E /* Gratitude Journal */,
 				CE08796E27862D0400C3105E /* Products */,
+				C675FCBF316D766C4C0879DE /* Pods */,
+				D92F69CFF2D7CA47981B4CC4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,6 +228,14 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		D92F69CFF2D7CA47981B4CC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE2C354590D18B4BEC171C62 /* Pods_Gratitude_Journal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE08798127862D0A00C3105E /* Build configuration list for PBXNativeTarget "Gratitude Journal" */;
 			buildPhases = (
+				7442818AC6A7196EA90644E4 /* [CP] Check Pods Manifest.lock */,
 				CE08796927862D0400C3105E /* Sources */,
 				CE08796A27862D0400C3105E /* Frameworks */,
 				CE08796B27862D0400C3105E /* Resources */,
+				E86FFF54C9EB0248752C15B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,6 +312,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7442818AC6A7196EA90644E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gratitude Journal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E86FFF54C9EB0248752C15B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE08796927862D0400C3105E /* Sources */ = {
@@ -453,6 +522,7 @@
 		};
 		CE08798227862D0A00C3105E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C9F53AF006A3CE1FB3A4DB4 /* Pods-Gratitude Journal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -480,6 +550,7 @@
 		};
 		CE08798327862D0A00C3105E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85869AFD10D0D3E3E31AA170 /* Pods-Gratitude Journal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
