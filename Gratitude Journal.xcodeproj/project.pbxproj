@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE08797127862D0400C3105E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797027862D0400C3105E /* AppDelegate.swift */; };
+		CE08797327862D0400C3105E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797227862D0400C3105E /* SceneDelegate.swift */; };
+		CE08797527862D0400C3105E /* GratitudeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797427862D0400C3105E /* GratitudeViewController.swift */; };
+		CE08797A27862D0A00C3105E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE08797927862D0A00C3105E /* Assets.xcassets */; };
+		CE08797D27862D0A00C3105E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE08797B27862D0A00C3105E /* LaunchScreen.storyboard */; };
+		CE244CB82792332B00278B76 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE244CB72792332B00278B76 /* HideKeyboard.swift */; };
+		CE244CBE27923C0300278B76 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE244CBD27923C0300278B76 /* HistoryViewController.swift */; };
+		CE244CC027923D5000278B76 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE244CBF27923D5000278B76 /* HistoryCell.swift */; };
+		CE244CC22797414E00278B76 /* HistoryModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE244CC12797414E00278B76 /* HistoryModelCell.swift */; };
+		CE25F0ED27E13DDC00A2666E /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25F0EC27E13DDC00A2666E /* ButtonCell.swift */; };
+		CE25F13827E4041000A2666E /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25F13727E4041000A2666E /* DateCell.swift */; };
+		CEB14B20278B86EE002B294C /* HappyThingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB14B1F278B86EE002B294C /* HappyThingsCell.swift */; };
+		CEB14B22278B87A4002B294C /* MoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB14B21278B87A4002B294C /* MoodCell.swift */; };
+		CEB14B26278B938C002B294C /* GratitudeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB14B25278B938C002B294C /* GratitudeCell.swift */; };
+		CEB14B28278E5837002B294C /* GratitudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB14B27278E5837002B294C /* GratitudeService.swift */; };
+		CEBBD4082787A460002F762B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4072787A45F002F762B /* UIColor.swift */; };
+		CEBBD40A2787BE5D002F762B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4092787BE5D002F762B /* TabBar.swift */; };
+		CEBBD40C2788CEBA002F762B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD40B2788CEBA002F762B /* SettingsViewController.swift */; };
+		CEBBD40E2788CEF6002F762B /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD40D2788CEF6002F762B /* Setting.swift */; };
+		CEBBD4102788CF46002F762B /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD40F2788CF46002F762B /* Localize.swift */; };
+		CEBBD4132788CF9B002F762B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4122788CF9B002F762B /* SettingsCell.swift */; };
+		CEBBD4152788CFFC002F762B /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4142788CFFC002F762B /* NSObject.swift */; };
+		CEBBD4182788D560002F762B /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4172788D560002F762B /* NotificationViewController.swift */; };
+		CEBBD41A2788D580002F762B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4192788D57F002F762B /* NotificationService.swift */; };
+		CEBBD41C2788D59C002F762B /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD41B2788D59C002F762B /* TimeCell.swift */; };
+		CEBBD41E2788E102002F762B /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD41D2788E102002F762B /* UIView+Layout.swift */; };
+		CEBBD4202788E14B002F762B /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD41F2788E14B002F762B /* Configurable.swift */; };
+		CEBBD42227891134002F762B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD42127891134002F762B /* UIView.swift */; };
+		CED45C6A279B661400626C6B /* MoodCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED45C69279B661400626C6B /* MoodCollectionCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE08796D27862D0400C3105E /* Gratitude Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gratitude Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE08797027862D0400C3105E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE08797227862D0400C3105E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE08797427862D0400C3105E /* GratitudeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeViewController.swift; sourceTree = "<group>"; };
+		CE08797927862D0A00C3105E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE08797C27862D0A00C3105E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE08797E27862D0A00C3105E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE244CB72792332B00278B76 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		CE244CBD27923C0300278B76 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		CE244CBF27923D5000278B76 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		CE244CC12797414E00278B76 /* HistoryModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModelCell.swift; sourceTree = "<group>"; };
+		CE25F0EC27E13DDC00A2666E /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		CE25F13727E4041000A2666E /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		CEB14B1F278B86EE002B294C /* HappyThingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyThingsCell.swift; sourceTree = "<group>"; };
+		CEB14B21278B87A4002B294C /* MoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCell.swift; sourceTree = "<group>"; };
+		CEB14B25278B938C002B294C /* GratitudeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GratitudeCell.swift; sourceTree = "<group>"; };
+		CEB14B27278E5837002B294C /* GratitudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeService.swift; sourceTree = "<group>"; };
+		CEBBD4072787A45F002F762B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		CEBBD4092787BE5D002F762B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		CEBBD40B2788CEBA002F762B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CEBBD40D2788CEF6002F762B /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		CEBBD40F2788CF46002F762B /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		CEBBD4122788CF9B002F762B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		CEBBD4142788CFFC002F762B /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		CEBBD4172788D560002F762B /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		CEBBD4192788D57F002F762B /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		CEBBD41B2788D59C002F762B /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
+		CEBBD41D2788E102002F762B /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		CEBBD41F2788E14B002F762B /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		CEBBD42127891134002F762B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		CED45C69279B661400626C6B /* MoodCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCollectionCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE08796A27862D0400C3105E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE08796427862D0400C3105E = {
+			isa = PBXGroup;
+			children = (
+				CE08796F27862D0400C3105E /* Gratitude Journal */,
+				CE08796E27862D0400C3105E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE08796E27862D0400C3105E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE08796D27862D0400C3105E /* Gratitude Journal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE08796F27862D0400C3105E /* Gratitude Journal */ = {
+			isa = PBXGroup;
+			children = (
+				CE08797027862D0400C3105E /* AppDelegate.swift */,
+				CE08797227862D0400C3105E /* SceneDelegate.swift */,
+				CE244CBC27923BDE00278B76 /* History */,
+				CE244CB927923B6C00278B76 /* Gratitude */,
+				CE244CBA27923B8C00278B76 /* Service */,
+				CE244CBB27923B9900278B76 /* Helpers */,
+				CEBBD4162788D131002F762B /* Notifications */,
+				CEBBD4112788CF53002F762B /* Settings */,
+				CEBBD40F2788CF46002F762B /* Localize.swift */,
+				CE08797927862D0A00C3105E /* Assets.xcassets */,
+				CE08797B27862D0A00C3105E /* LaunchScreen.storyboard */,
+				CE08797E27862D0A00C3105E /* Info.plist */,
+			);
+			path = "Gratitude Journal";
+			sourceTree = "<group>";
+		};
+		CE244CB927923B6C00278B76 /* Gratitude */ = {
+			isa = PBXGroup;
+			children = (
+				CE08797427862D0400C3105E /* GratitudeViewController.swift */,
+				CE25F13A27E4195F00A2666E /* TableCell */,
+			);
+			path = Gratitude;
+			sourceTree = "<group>";
+		};
+		CE244CBA27923B8C00278B76 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CEB14B27278E5837002B294C /* GratitudeService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CE244CBB27923B9900278B76 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBD41F2788E14B002F762B /* Configurable.swift */,
+				CE244CB72792332B00278B76 /* HideKeyboard.swift */,
+				CEBBD4092787BE5D002F762B /* TabBar.swift */,
+				CEBBD4072787A45F002F762B /* UIColor.swift */,
+				CEBBD4142788CFFC002F762B /* NSObject.swift */,
+				CEBBD41D2788E102002F762B /* UIView+Layout.swift */,
+				CEBBD42127891134002F762B /* UIView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CE244CBC27923BDE00278B76 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				CE244CC12797414E00278B76 /* HistoryModelCell.swift */,
+				CE244CBD27923C0300278B76 /* HistoryViewController.swift */,
+				CE244CBF27923D5000278B76 /* HistoryCell.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		CE25F13927E4193100A2666E /* MoodCollection */ = {
+			isa = PBXGroup;
+			children = (
+				CEB14B21278B87A4002B294C /* MoodCell.swift */,
+				CED45C69279B661400626C6B /* MoodCollectionCell.swift */,
+			);
+			path = MoodCollection;
+			sourceTree = "<group>";
+		};
+		CE25F13A27E4195F00A2666E /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEB14B25278B938C002B294C /* GratitudeCell.swift */,
+				CEB14B1F278B86EE002B294C /* HappyThingsCell.swift */,
+				CE25F0EC27E13DDC00A2666E /* ButtonCell.swift */,
+				CE25F13727E4041000A2666E /* DateCell.swift */,
+				CE25F13927E4193100A2666E /* MoodCollection */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		CEBBD4112788CF53002F762B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBD40B2788CEBA002F762B /* SettingsViewController.swift */,
+				CEBBD4122788CF9B002F762B /* SettingsCell.swift */,
+				CEBBD40D2788CEF6002F762B /* Setting.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CEBBD4162788D131002F762B /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				CEBBD4172788D560002F762B /* NotificationViewController.swift */,
+				CEBBD4192788D57F002F762B /* NotificationService.swift */,
+				CEBBD41B2788D59C002F762B /* TimeCell.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE08796C27862D0400C3105E /* Gratitude Journal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE08798127862D0A00C3105E /* Build configuration list for PBXNativeTarget "Gratitude Journal" */;
+			buildPhases = (
+				CE08796927862D0400C3105E /* Sources */,
+				CE08796A27862D0400C3105E /* Frameworks */,
+				CE08796B27862D0400C3105E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Gratitude Journal";
+			productName = "Gratitude Journal";
+			productReference = CE08796D27862D0400C3105E /* Gratitude Journal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE08796527862D0400C3105E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					CE08796C27862D0400C3105E = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = CE08796827862D0400C3105E /* Build configuration list for PBXProject "Gratitude Journal" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE08796427862D0400C3105E;
+			productRefGroup = CE08796E27862D0400C3105E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE08796C27862D0400C3105E /* Gratitude Journal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE08796B27862D0400C3105E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE08797D27862D0A00C3105E /* LaunchScreen.storyboard in Resources */,
+				CE08797A27862D0A00C3105E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE08796927862D0400C3105E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB14B22278B87A4002B294C /* MoodCell.swift in Sources */,
+				CEBBD42227891134002F762B /* UIView.swift in Sources */,
+				CE25F0ED27E13DDC00A2666E /* ButtonCell.swift in Sources */,
+				CEBBD4202788E14B002F762B /* Configurable.swift in Sources */,
+				CE25F13827E4041000A2666E /* DateCell.swift in Sources */,
+				CE08797527862D0400C3105E /* GratitudeViewController.swift in Sources */,
+				CE244CC22797414E00278B76 /* HistoryModelCell.swift in Sources */,
+				CEBBD4182788D560002F762B /* NotificationViewController.swift in Sources */,
+				CE244CBE27923C0300278B76 /* HistoryViewController.swift in Sources */,
+				CED45C6A279B661400626C6B /* MoodCollectionCell.swift in Sources */,
+				CEB14B26278B938C002B294C /* GratitudeCell.swift in Sources */,
+				CEBBD4082787A460002F762B /* UIColor.swift in Sources */,
+				CEBBD41C2788D59C002F762B /* TimeCell.swift in Sources */,
+				CEB14B20278B86EE002B294C /* HappyThingsCell.swift in Sources */,
+				CEBBD4132788CF9B002F762B /* SettingsCell.swift in Sources */,
+				CE244CB82792332B00278B76 /* HideKeyboard.swift in Sources */,
+				CEBBD41A2788D580002F762B /* NotificationService.swift in Sources */,
+				CEBBD40A2787BE5D002F762B /* TabBar.swift in Sources */,
+				CE08797127862D0400C3105E /* AppDelegate.swift in Sources */,
+				CE244CC027923D5000278B76 /* HistoryCell.swift in Sources */,
+				CEBBD4102788CF46002F762B /* Localize.swift in Sources */,
+				CEBBD40E2788CEF6002F762B /* Setting.swift in Sources */,
+				CEBBD4152788CFFC002F762B /* NSObject.swift in Sources */,
+				CE08797327862D0400C3105E /* SceneDelegate.swift in Sources */,
+				CEBBD41E2788E102002F762B /* UIView+Layout.swift in Sources */,
+				CEBBD40C2788CEBA002F762B /* SettingsViewController.swift in Sources */,
+				CEB14B28278E5837002B294C /* GratitudeService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE08797B27862D0A00C3105E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE08797C27862D0A00C3105E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE08797F27862D0A00C3105E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE08798027862D0A00C3105E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE08798227862D0A00C3105E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4CH78Z5C5G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Gratitude Journal/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Gratitude-Journal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CE08798327862D0A00C3105E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4CH78Z5C5G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Gratitude Journal/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Gratitude-Journal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE08796827862D0400C3105E /* Build configuration list for PBXProject "Gratitude Journal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE08797F27862D0A00C3105E /* Debug */,
+				CE08798027862D0A00C3105E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE08798127862D0A00C3105E /* Build configuration list for PBXNativeTarget "Gratitude Journal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE08798227862D0A00C3105E /* Debug */,
+				CE08798327862D0A00C3105E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE08796527862D0400C3105E /* Project object */;
+}
