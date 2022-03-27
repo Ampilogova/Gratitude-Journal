@@ -4,12 +4,9 @@
 target 'Gratitude Journal' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
   # Pods for Gratitude Journal
 
-    pod 'Firebase/Core'
-    pod 'Firebase/Database'
-    pod 'Firebase/Auth'
-    pod 'Firebase/Storage'
+   pod 'Firebase/Database'
+   pod 'SwiftyJSON'
 
 end

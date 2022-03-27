@@ -10,6 +10,11 @@ import UIKit
 extension UIView {
     
     public func makeRounded() {
+        layer.cornerRadius = 30
+        layer.masksToBounds = true
+    }
+    
+    public func makeCellRounded() {
         layer.cornerRadius = 10
         layer.masksToBounds = true
     }
