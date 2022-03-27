@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		477840294131E9345EBD7156 /* Pods_Gratitude_Journal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D335B05B9E069187713E978 /* Pods_Gratitude_Journal.framework */; };
 		CE08797127862D0400C3105E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797027862D0400C3105E /* AppDelegate.swift */; };
 		CE08797327862D0400C3105E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797227862D0400C3105E /* SceneDelegate.swift */; };
 		CE08797A27862D0A00C3105E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE08797927862D0A00C3105E /* Assets.xcassets */; };
@@ -40,9 +39,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		035EFE9350CB79F46327FF47 /* Pods-Gratitude Journal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gratitude Journal.release.xcconfig"; path = "Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal.release.xcconfig"; sourceTree = "<group>"; };
-		9D335B05B9E069187713E978 /* Pods_Gratitude_Journal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gratitude_Journal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABEA63EC5FBE3CE6F4F6181C /* Pods-Gratitude Journal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gratitude Journal.debug.xcconfig"; path = "Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal.debug.xcconfig"; sourceTree = "<group>"; };
 		CE08796D27862D0400C3105E /* Gratitude Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gratitude Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE08797027862D0400C3105E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE08797227862D0400C3105E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,26 +77,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				477840294131E9345EBD7156 /* Pods_Gratitude_Journal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B4AD664D235A81AF46796852 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9D335B05B9E069187713E978 /* Pods_Gratitude_Journal.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C675FCBF316D766C4C0879DE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				ABEA63EC5FBE3CE6F4F6181C /* Pods-Gratitude Journal.debug.xcconfig */,
-				035EFE9350CB79F46327FF47 /* Pods-Gratitude Journal.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -111,7 +96,6 @@
 				CE08796F27862D0400C3105E /* Gratitude Journal */,
 				CE08796E27862D0400C3105E /* Products */,
 				C675FCBF316D766C4C0879DE /* Pods */,
-				B4AD664D235A81AF46796852 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,11 +215,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE08798127862D0A00C3105E /* Build configuration list for PBXNativeTarget "Gratitude Journal" */;
 			buildPhases = (
-				E9676B6A97F8C323126D3D28 /* [CP] Check Pods Manifest.lock */,
 				CE08796927862D0400C3105E /* Sources */,
 				CE08796A27862D0400C3105E /* Frameworks */,
 				CE08796B27862D0400C3105E /* Resources */,
-				93D32041124FD4C73A693303 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,48 +273,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		93D32041124FD4C73A693303 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E9676B6A97F8C323126D3D28 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Gratitude Journal-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE08796927862D0400C3105E /* Sources */ = {
@@ -500,7 +440,6 @@
 		};
 		CE08798227862D0A00C3105E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABEA63EC5FBE3CE6F4F6181C /* Pods-Gratitude Journal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -528,7 +467,6 @@
 		};
 		CE08798327862D0A00C3105E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 035EFE9350CB79F46327FF47 /* Pods-Gratitude Journal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
