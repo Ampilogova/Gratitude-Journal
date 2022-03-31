@@ -7,31 +7,44 @@
 
 import UIKit
 
-class TabBar: UITabBarController {
+class TabBar: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         tabBar.tintColor = UIColor.customBackgroundColor
         tabBar.backgroundColor = .white
-        setupVCs()
+        delegate = self
     }
     
-    func setupVCs() {
-        viewControllers = [
-            createNavController(for: GratitudeJournalTableViewController(), image: UIImage(systemName: "book")!, title: "Journal"),
-            createNavController(for: CreateNoteViewController(), image: UIImage(systemName: "square.and.pencil")!, title: "Add note"),
-            createNavController(for: QuoteViewController(), image: UIImage(systemName: "list.dash")!, title: "Quotes"),
-            createNavController(for: SettingsViewController(), image: UIImage(systemName: "gear")!, title: "Settings")
-        ]
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupTabbar()
     }
     
-    fileprivate func createNavController(for rootViewController: UIViewController,
-                                         image: UIImage, title: String) -> UIViewController {
-        let navController = UINavigationController(rootViewController: rootViewController)
-        navController.tabBarItem.image = image
-        navController.tabBarItem.title = title
-        navController.navigationBar.prefersLargeTitles = true
-        return navController
+    public func setupTabbar() {
+        let gratitudeJournal = UINavigationController(rootViewController: GratitudeJournalTableViewController())
+        let gratitudeJournalIcon = UITabBarItem(title: loc("journal"), image: UIImage(systemName: "book"), tag: 0)
+        gratitudeJournal.tabBarItem = gratitudeJournalIcon
+        
+        let createNote = UINavigationController(rootViewController: CreateNoteViewController(text: ""))
+        let createNoteIcon = UITabBarItem(title: loc("add.note"), image: UIImage(systemName: "square.and.pencil"), tag: 1)
+        createNote.tabBarItem = createNoteIcon
+        
+        let quotes = UINavigationController(rootViewController: QuoteViewController())
+        let quotesIcon = UITabBarItem(title: loc("quotes"), image: UIImage(systemName: "list.dash"), tag: 2)
+        quotes.tabBarItem = quotesIcon
+        
+        let settings = UINavigationController(rootViewController: SettingsViewController())
+        let settingsIcon = UITabBarItem(title: loc("settings"), image: UIImage(systemName: "gear"), tag: 3)
+        settings.tabBarItem = settingsIcon
+        
+        let controllers = [gratitudeJournal, createNote, quotes, settings]
+        self.viewControllers = controllers
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        print("Should select viewController: \(viewController.title ?? "") ?")
+        return true
     }
 }

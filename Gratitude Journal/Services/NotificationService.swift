@@ -10,18 +10,21 @@ import NotificationCenter
 
 class NotificationService {
     
-    public func notificationsScheduler(hours: [Int]) {
+    public func notificationsScheduler(hours: Int, minute: Int, weekdays: [Int]) {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
         let content = UNMutableNotificationContent()
-        content.title = loc("water.tracker")
-        content.body = loc("notice")
+        content.title = "gratitude.journal"
+        content.body = "notice"
         content.sound = UNNotificationSound.default
         
-        for time in hours {
-            let dateComponents = DateComponents(hour: time)
+        for day in weekdays {
+            var dateComponents = DateComponents()
+            dateComponents.weekday = day
+            dateComponents.hour = hours
+            dateComponents.minute = minute
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            let request = UNNotificationRequest(identifier: "id " + String(time), content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         }
     }

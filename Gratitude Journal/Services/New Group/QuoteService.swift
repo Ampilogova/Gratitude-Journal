@@ -23,8 +23,8 @@ class QuoteService {
         
         let value2 = ["quote": "\"I can't change the direction of the wind, but I can adjust my sails to always reach my destination\".",
                       "quoteRu": "\"Я не в силах изменить направление ветра, но я могу повернуть свои паруса, чтобы всегда достичь заданной цели\".",
-                      "author": "Джимми Дин",
-                      "authorRu": "Уинстон Черчилль"]
+                      "author": "Jimmy Dean",
+                      "authorRu": "Джимми Дин"]
         reference.child("quotes/quote2").setValue(value2)
         
         let value3 = ["quote": "\"Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking\".",

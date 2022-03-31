@@ -29,7 +29,7 @@ class GratitudeCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textColor = .customblackColor
-        label.text = "Daily Thought"
+        label.text = loc("daily.thought")
         label.textAlignment = .left
         label.numberOfLines = 2
         return label

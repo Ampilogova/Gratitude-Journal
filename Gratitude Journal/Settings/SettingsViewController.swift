@@ -11,7 +11,6 @@ import MessageUI
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     
     let settings = [
-        Setting(name: "affirmations"),
         Setting(name: "notifications"),
         Setting(name: "send.feedback"),
     ]
@@ -46,16 +45,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         return cell
     }
-      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         var viewController = UIViewController()
         if indexPath.row == 0 {
-//            viewController = VolumeSettingViewController()
-            self.navigationController?.pushViewController(viewController, animated: true)
-        } else if indexPath.row == 1 {
             viewController = NotificationViewController()
             self.navigationController?.pushViewController(viewController, animated: true)
-        } else if indexPath.row == 2 {
+        } else if indexPath.row == 1 {
             showMailComposer()
         }
     }

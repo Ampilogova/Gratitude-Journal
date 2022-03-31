@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsCell: UITableViewCell, Configurable {
+class SettingsCell: UITableViewCell {
     
     typealias ConfigurationModel = Setting
     

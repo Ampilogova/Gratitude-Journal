@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C27E27A6A8C3CB0AADAC90E2 /* Pods_Gratitude_Journal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC56167174FCA80EA5C09B5 /* Pods_Gratitude_Journal.framework */; };
 		CE08797127862D0400C3105E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797027862D0400C3105E /* AppDelegate.swift */; };
 		CE08797327862D0400C3105E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797227862D0400C3105E /* SceneDelegate.swift */; };
 		CE08797A27862D0A00C3105E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE08797927862D0A00C3105E /* Assets.xcassets */; };
-		CE08797D27862D0A00C3105E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE08797B27862D0A00C3105E /* LaunchScreen.storyboard */; };
-		CE244CB82792332B00278B76 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE244CB72792332B00278B76 /* HideKeyboard.swift */; };
+		CE14C12C27F3780400CD4CA4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14C12B27F3780400CD4CA4 /* Alert.swift */; };
+		CE14C12E27F3BFEC00CD4CA4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14C12D27F3BFEC00CD4CA4 /* SignUpViewController.swift */; };
+		CE14C13027F3C96200CD4CA4 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14C12F27F3C96200CD4CA4 /* FirebaseAuthManager.swift */; };
 		CE244CBE27923C0300278B76 /* GratitudeJournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE244CBD27923C0300278B76 /* GratitudeJournalTableViewController.swift */; };
 		CE244CC027923D5000278B76 /* GratitudeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE244CBF27923D5000278B76 /* GratitudeCell.swift */; };
 		CE244CC22797414E00278B76 /* GratitudeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE244CC12797414E00278B76 /* GratitudeModel.swift */; };
 		CE25F13E27E5053E00A2666E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE25F13D27E5053E00A2666E /* GoogleService-Info.plist */; };
+		CE3B8AFC27F5277900E14AFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE3B8AFE27F5277900E14AFD /* Localizable.strings */; };
 		CEA91ECD27E8FE1500A16C4E /* DatabaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA91ECC27E8FE1500A16C4E /* DatabaseReference.swift */; };
 		CEB14B28278E5837002B294C /* GratitudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB14B27278E5837002B294C /* GratitudeService.swift */; };
 		CEBBD4082787A460002F762B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4072787A45F002F762B /* UIColor.swift */; };
@@ -27,29 +30,37 @@
 		CEBBD4152788CFFC002F762B /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4142788CFFC002F762B /* NSObject.swift */; };
 		CEBBD4182788D560002F762B /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4172788D560002F762B /* NotificationViewController.swift */; };
 		CEBBD41A2788D580002F762B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4192788D57F002F762B /* NotificationService.swift */; };
-		CEBBD41C2788D59C002F762B /* TimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD41B2788D59C002F762B /* TimeCell.swift */; };
+		CEBBD41C2788D59C002F762B /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD41B2788D59C002F762B /* DateCell.swift */; };
 		CEBBD41E2788E102002F762B /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD41D2788E102002F762B /* UIView+Layout.swift */; };
-		CEBBD4202788E14B002F762B /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD41F2788E14B002F762B /* Configurable.swift */; };
 		CEBBD42227891134002F762B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD42127891134002F762B /* UIView.swift */; };
+		CEC17E0B27F4BB1200FC67BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC17E0A27F4BB1200FC67BE /* LogInViewController.swift */; };
+		CEC17E0D27F4BB3400FC67BE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC17E0C27F4BB3400FC67BE /* WelcomeViewController.swift */; };
+		CEC17E0F27F4EFD700FC67BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC17E0E27F4EFD500FC67BE /* LaunchScreen.storyboard */; };
 		CECE2EF727ED3F7500CBBBE1 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE2EF627ED3F7500CBBBE1 /* CreateNoteViewController.swift */; };
 		CEE21DE527EA5C5C00841955 /* JSONParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE21DE427EA5C5B00841955 /* JSONParsable.swift */; };
 		CEE8117627F0262900CFC23C /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8117527F0262900CFC23C /* QuoteViewController.swift */; };
 		CEE8117927F0C9EB00CFC23C /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8117827F0C9EB00CFC23C /* QuoteService.swift */; };
 		CEE8117C27F0D5DB00CFC23C /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8117B27F0D5DB00CFC23C /* QuoteModel.swift */; };
+		CEF4760F27F13A25002D3584 /* DateCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4760E27F13A25002D3584 /* DateCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		125E6DD31D3D37351DD4E165 /* Pods-Gratitude Journal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gratitude Journal.release.xcconfig"; path = "Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal.release.xcconfig"; sourceTree = "<group>"; };
+		4DC56167174FCA80EA5C09B5 /* Pods_Gratitude_Journal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gratitude_Journal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE08796D27862D0400C3105E /* Gratitude Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gratitude Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE08797027862D0400C3105E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE08797227862D0400C3105E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE08797927862D0A00C3105E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE08797C27862D0A00C3105E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE08797E27862D0A00C3105E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE244CB72792332B00278B76 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
-		CE244CBD27923C0300278B76 /* GratitudeJournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeJournalTableViewController.swift; sourceTree = "<group>"; };
+		CE14C12B27F3780400CD4CA4 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		CE14C12D27F3BFEC00CD4CA4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CE14C12F27F3C96200CD4CA4 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		CE244CBD27923C0300278B76 /* GratitudeJournalTableViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = GratitudeJournalTableViewController.swift; sourceTree = "<group>"; };
 		CE244CBF27923D5000278B76 /* GratitudeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeCell.swift; sourceTree = "<group>"; };
 		CE244CC12797414E00278B76 /* GratitudeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeModel.swift; sourceTree = "<group>"; };
 		CE25F13D27E5053E00A2666E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CE3B8AFD27F5277900E14AFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE3B8AFF27F5277C00E14AFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CEA91ECC27E8FE1500A16C4E /* DatabaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReference.swift; sourceTree = "<group>"; };
 		CEB14B27278E5837002B294C /* GratitudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeService.swift; sourceTree = "<group>"; };
 		CEBBD4072787A45F002F762B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -61,15 +72,19 @@
 		CEBBD4142788CFFC002F762B /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		CEBBD4172788D560002F762B /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		CEBBD4192788D57F002F762B /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		CEBBD41B2788D59C002F762B /* TimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCell.swift; sourceTree = "<group>"; };
+		CEBBD41B2788D59C002F762B /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		CEBBD41D2788E102002F762B /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
-		CEBBD41F2788E14B002F762B /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		CEBBD42127891134002F762B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		CEC17E0A27F4BB1200FC67BE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		CEC17E0C27F4BB3400FC67BE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		CEC17E0E27F4EFD500FC67BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../../../../.Trash/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECE2EF627ED3F7500CBBBE1 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		CEE21DE427EA5C5B00841955 /* JSONParsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParsable.swift; sourceTree = "<group>"; };
 		CEE8117527F0262900CFC23C /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		CEE8117827F0C9EB00CFC23C /* QuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuoteService.swift; path = "../New Group/QuoteService.swift"; sourceTree = "<group>"; };
 		CEE8117B27F0D5DB00CFC23C /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		CEF4760E27F13A25002D3584 /* DateCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionView.swift; sourceTree = "<group>"; };
+		DB8E2D001F2966420475FF98 /* Pods-Gratitude Journal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gratitude Journal.debug.xcconfig"; path = "Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C27E27A6A8C3CB0AADAC90E2 /* Pods_Gratitude_Journal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +102,8 @@
 		C675FCBF316D766C4C0879DE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				DB8E2D001F2966420475FF98 /* Pods-Gratitude Journal.debug.xcconfig */,
+				125E6DD31D3D37351DD4E165 /* Pods-Gratitude Journal.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -96,6 +114,7 @@
 				CE08796F27862D0400C3105E /* Gratitude Journal */,
 				CE08796E27862D0400C3105E /* Products */,
 				C675FCBF316D766C4C0879DE /* Pods */,
+				DA2A39CD6CF89F081FAEB2EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,18 +132,22 @@
 				CE08797027862D0400C3105E /* AppDelegate.swift */,
 				CE08797227862D0400C3105E /* SceneDelegate.swift */,
 				CEA91ECC27E8FE1500A16C4E /* DatabaseReference.swift */,
-				CEE21DE427EA5C5B00841955 /* JSONParsable.swift */,
 				CEBBD4092787BE5D002F762B /* TabBar.swift */,
+				CEC17E0C27F4BB3400FC67BE /* WelcomeViewController.swift */,
+				CE14C12D27F3BFEC00CD4CA4 /* SignUpViewController.swift */,
+				CEC17E0A27F4BB1200FC67BE /* LogInViewController.swift */,
+				CE14C12F27F3C96200CD4CA4 /* FirebaseAuthManager.swift */,
 				CEE8117727F0262F00CFC23C /* Quote */,
 				CE244CBC27923BDE00278B76 /* History */,
 				CE244CB927923B6C00278B76 /* Gratitude */,
-				CE244CBA27923B8C00278B76 /* Service */,
+				CE244CBA27923B8C00278B76 /* Services */,
 				CE244CBB27923B9900278B76 /* Helpers */,
 				CEBBD4162788D131002F762B /* Notifications */,
 				CEBBD4112788CF53002F762B /* Settings */,
 				CEBBD40F2788CF46002F762B /* Localize.swift */,
+				CE3B8AFE27F5277900E14AFD /* Localizable.strings */,
 				CE08797927862D0A00C3105E /* Assets.xcassets */,
-				CE08797B27862D0A00C3105E /* LaunchScreen.storyboard */,
+				CEC17E0E27F4EFD500FC67BE /* LaunchScreen.storyboard */,
 				CE08797E27862D0A00C3105E /* Info.plist */,
 				CE25F13D27E5053E00A2666E /* GoogleService-Info.plist */,
 			);
@@ -139,20 +162,21 @@
 			path = Gratitude;
 			sourceTree = "<group>";
 		};
-		CE244CBA27923B8C00278B76 /* Service */ = {
+		CE244CBA27923B8C00278B76 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CEBBD4192788D57F002F762B /* NotificationService.swift */,
 				CEB14B27278E5837002B294C /* GratitudeService.swift */,
 				CEE8117A27F0C9F000CFC23C /* QuoteService */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CE244CBB27923B9900278B76 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CEBBD41F2788E14B002F762B /* Configurable.swift */,
-				CE244CB72792332B00278B76 /* HideKeyboard.swift */,
+				CEE21DE427EA5C5B00841955 /* JSONParsable.swift */,
+				CE14C12B27F3780400CD4CA4 /* Alert.swift */,
 				CEBBD4072787A45F002F762B /* UIColor.swift */,
 				CEBBD4142788CFFC002F762B /* NSObject.swift */,
 				CEBBD41D2788E102002F762B /* UIView+Layout.swift */,
@@ -185,8 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				CEBBD4172788D560002F762B /* NotificationViewController.swift */,
-				CEBBD4192788D57F002F762B /* NotificationService.swift */,
-				CEBBD41B2788D59C002F762B /* TimeCell.swift */,
+				CEF4760E27F13A25002D3584 /* DateCollectionView.swift */,
+				CEBBD41B2788D59C002F762B /* DateCell.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -208,6 +232,14 @@
 			path = QuoteService;
 			sourceTree = "<group>";
 		};
+		DA2A39CD6CF89F081FAEB2EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DC56167174FCA80EA5C09B5 /* Pods_Gratitude_Journal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE08798127862D0A00C3105E /* Build configuration list for PBXNativeTarget "Gratitude Journal" */;
 			buildPhases = (
+				4843DE5353639326A4F34CB2 /* [CP] Check Pods Manifest.lock */,
 				CE08796927862D0400C3105E /* Sources */,
 				CE08796A27862D0400C3105E /* Frameworks */,
 				CE08796B27862D0400C3105E /* Resources */,
+				DD46178965B2BA880B49B1D2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +284,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CE08796427862D0400C3105E;
 			productRefGroup = CE08796E27862D0400C3105E /* Products */;
@@ -266,7 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE08797D27862D0A00C3105E /* LaunchScreen.storyboard in Resources */,
+				CEC17E0F27F4EFD700FC67BE /* LaunchScreen.storyboard in Resources */,
+				CE3B8AFC27F5277900E14AFD /* Localizable.strings in Resources */,
 				CE08797A27862D0A00C3105E /* Assets.xcassets in Resources */,
 				CE25F13E27E5053E00A2666E /* GoogleService-Info.plist in Resources */,
 			);
@@ -274,36 +310,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4843DE5353639326A4F34CB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gratitude Journal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD46178965B2BA880B49B1D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE08796927862D0400C3105E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CEBBD42227891134002F762B /* UIView.swift in Sources */,
-				CEBBD4202788E14B002F762B /* Configurable.swift in Sources */,
 				CEE8117927F0C9EB00CFC23C /* QuoteService.swift in Sources */,
 				CEE21DE527EA5C5C00841955 /* JSONParsable.swift in Sources */,
 				CE244CC22797414E00278B76 /* GratitudeModel.swift in Sources */,
 				CECE2EF727ED3F7500CBBBE1 /* CreateNoteViewController.swift in Sources */,
+				CE14C12C27F3780400CD4CA4 /* Alert.swift in Sources */,
 				CEBBD4182788D560002F762B /* NotificationViewController.swift in Sources */,
 				CE244CBE27923C0300278B76 /* GratitudeJournalTableViewController.swift in Sources */,
 				CEA91ECD27E8FE1500A16C4E /* DatabaseReference.swift in Sources */,
 				CEBBD4082787A460002F762B /* UIColor.swift in Sources */,
 				CEE8117627F0262900CFC23C /* QuoteViewController.swift in Sources */,
-				CEBBD41C2788D59C002F762B /* TimeCell.swift in Sources */,
+				CEBBD41C2788D59C002F762B /* DateCell.swift in Sources */,
 				CEE8117C27F0D5DB00CFC23C /* QuoteModel.swift in Sources */,
 				CEBBD4132788CF9B002F762B /* SettingsCell.swift in Sources */,
-				CE244CB82792332B00278B76 /* HideKeyboard.swift in Sources */,
 				CEBBD41A2788D580002F762B /* NotificationService.swift in Sources */,
+				CE14C12E27F3BFEC00CD4CA4 /* SignUpViewController.swift in Sources */,
 				CEBBD40A2787BE5D002F762B /* TabBar.swift in Sources */,
 				CE08797127862D0400C3105E /* AppDelegate.swift in Sources */,
 				CE244CC027923D5000278B76 /* GratitudeCell.swift in Sources */,
 				CEBBD4102788CF46002F762B /* Localize.swift in Sources */,
+				CEC17E0B27F4BB1200FC67BE /* LogInViewController.swift in Sources */,
+				CEC17E0D27F4BB3400FC67BE /* WelcomeViewController.swift in Sources */,
 				CEBBD40E2788CEF6002F762B /* Setting.swift in Sources */,
 				CEBBD4152788CFFC002F762B /* NSObject.swift in Sources */,
+				CE14C13027F3C96200CD4CA4 /* FirebaseAuthManager.swift in Sources */,
 				CE08797327862D0400C3105E /* SceneDelegate.swift in Sources */,
 				CEBBD41E2788E102002F762B /* UIView+Layout.swift in Sources */,
 				CEBBD40C2788CEBA002F762B /* SettingsViewController.swift in Sources */,
+				CEF4760F27F13A25002D3584 /* DateCollectionView.swift in Sources */,
 				CEB14B28278E5837002B294C /* GratitudeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,12 +393,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE08797B27862D0A00C3105E /* LaunchScreen.storyboard */ = {
+		CE3B8AFE27F5277900E14AFD /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CE08797C27862D0A00C3105E /* Base */,
+				CE3B8AFD27F5277900E14AFD /* en */,
+				CE3B8AFF27F5277C00E14AFD /* ru */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -440,12 +523,13 @@
 		};
 		CE08798227862D0A00C3105E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB8E2D001F2966420475FF98 /* Pods-Gratitude Journal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4CH78Z5C5G;
+				DEVELOPMENT_TEAM = 522V7NC84T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gratitude Journal/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -467,12 +551,13 @@
 		};
 		CE08798327862D0A00C3105E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 125E6DD31D3D37351DD4E165 /* Pods-Gratitude Journal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4CH78Z5C5G;
+				DEVELOPMENT_TEAM = 522V7NC84T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gratitude Journal/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

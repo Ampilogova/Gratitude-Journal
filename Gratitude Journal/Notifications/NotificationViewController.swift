@@ -7,104 +7,127 @@
 
 import UIKit
 
-import UIKit
-
-class NotificationViewController: UIViewController, UICollectionViewDelegate {
+class NotificationViewController: UIViewController, DateCollectionViewDelegate  {
     
-//    let userDefaults = UserDefaults.standard
-//    let notificationService = NotificationService()
-//    let notificationsTimesKey = "NotificationsTimes"
-//    
-//    var timeSet = Set<String>()
-//    let times = ["00:00", "12:00", "1:00", "13:00","2:00", "14:00", "3:00", "15:00", "4:00", "16:00", "5:00", "17:00", "6:00", "18:00", "7:00", "19:00", "8:00", "20:00", "9:00", "21:00", "10:00", "22:00", "11:00", "23:00"]
-//    
-//    
-//    let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        createCollectionView()
-//        let selectedTimes = UserDefaults.standard.value(forKey: notificationsTimesKey) as? [String]
-//        timeSet = Set(selectedTimes ?? [])
-//        
-//    }
-//    
-//    private func createCollectionView() {
-//        collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
-//        layout.minimumInteritemSpacing = 0
-//        collectionView.register(UINib(nibName: TimeCell.className, bundle: nil), forCellWithReuseIdentifier: TimeCell.className)
-//        collectionView.backgroundColor = UIColor.white
-//        collectionView.dataSource = self
-//        collectionView.delegate = self
-//        
-//        
-//        view.addSubview(collectionView)
-//        collectionView.pinToSuperview()
-//    }
-//}
-//
-//extension NotificationViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: self.view.frame.width / 2, height: 30)
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return times.count
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  TimeCell.className, for: indexPath) as? TimeCell
-//            else {
-//                preconditionFailure("TimeCell can't be dequeued")
-//        }
-//        
-//        let time = times[indexPath.row]
-//        let dateFormatterLocal = DateFormatter()
-//        
-//        dateFormatterLocal.locale = Locale.current
-//        dateFormatterLocal.dateFormat = "HH:mm"
-//        let date = dateFormatterLocal.date(from: time) ?? Date()
-//        let dateFormatterStyle = DateFormatter()
-//        dateFormatterStyle.timeStyle = .short
-//        let date1 = dateFormatterStyle.string(from: date)
-//        
-//        cell.timeLabel?.text = date1
-//        if timeSet.contains(times[indexPath.row]) {
-//            cell.selectionView.backgroundColor = UIColor.aqua
-//        } else {
-//            cell.selectionView.backgroundColor = nil
-//        }
-//        return cell
-//    }
-//    
-//    internal func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if !timeSet.contains(times[indexPath.row]) {
-//            timeSet.insert(times[indexPath.row])
-//        } else {
-//            timeSet.remove(times[indexPath.row])
-//        }
-//        selectionTimeNotification()
-//        convertTimeNotification()
-//        collectionView.reloadData()
-//    }
-//    
-//   private func selectionTimeNotification() {
-//        let array = Array(timeSet)
-//    userDefaults.set(array, forKey: notificationsTimesKey)
-//    }
-//    
-//    private func convertTimeNotification() {
-//        var arrayTime = [Int]()
-//        let array = Array(timeSet)
-//        for element in array {
-//            let components = element.components(separatedBy: ":")
-//            let hours = Int(components[0]) ?? 0
-//            arrayTime.append(hours)
-//        }
-//        
-//        notificationService.notificationsScheduler(hours: arrayTime)
-//    }
+    var dateCollectionView = DateCollectionView()
+    private let notificationService = NotificationService()
+    private var days = [Int]()
+    
+    private let timeTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = loc("time")
+        label.font = .boldSystemFont(ofSize: 24)
+        label.textColor = .customblackColor
+        label.textAlignment = .left
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    private let timeSubtitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = loc("morning")
+        label.font = .systemFont(ofSize: 17)
+        label.textColor = .customGrayColor
+        label.textAlignment = .left
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    private let dateTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = loc("day")
+        label.font = .boldSystemFont(ofSize: 24)
+        label.textColor = .customblackColor
+        label.textAlignment = .left
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    private let dateSubtitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = loc("recommend")
+        label.font = .systemFont(ofSize: 17)
+        label.textColor = .customGrayColor
+        label.textAlignment = .left
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    let datePicker = UIDatePicker()
+    
+    let button: UIButton = {
+        var button = UIButton()
+        button.setTitle(loc("save"), for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .customBackgroundColor
+        button.makeCellRounded()
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        button.addTarget(self, action: #selector(saveData), for: .touchUpInside)
+        return button
+    }()
+    
+    var stackView = UIStackView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = loc("notifications")
+        navigationController?.navigationBar.prefersLargeTitles = false
+        showDatePicker()
+        setupUI()
+        dateCollectionView.delegate = self
+    }
+    
+    private func setupUI() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stackView)
+        stackView.axis = .vertical
+        stackView.spacing = 15
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -120)
+        ])
+        
+        stackView.addArrangedSubview(timeTitleLabel)
+        stackView.addArrangedSubview(timeSubtitleLabel)
+        stackView.addArrangedSubview(datePicker)
+        stackView.addArrangedSubview(dateTitleLabel)
+        stackView.addArrangedSubview(dateSubtitleLabel)
+        stackView.addArrangedSubview(dateCollectionView.view)
+        stackView.addArrangedSubview(button)
+    }
+    
+    func showDatePicker() {
+        datePicker.datePickerMode = .time
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    @objc func saveData() {
+        let hour = hourFormatter(hour: datePicker.date)
+        let minute = minuteNotification(minute: datePicker.date)
+        notificationService.notificationsScheduler(hours: hour, minute: minute, weekdays: days)
+    }
+    
+    func daySelected(days: [Int]) {
+        DispatchQueue.main.async {
+            self.days = days
+        }
+    }
+    private func hourFormatter(hour: Date) -> Int {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        let date = formatter.string(from: hour)
+        return Int(date) ?? 0
+    }
+    
+    private func minuteNotification(minute: Date) -> Int {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "mm"
+        let date = formatter.string(from: minute)
+        return Int(date) ?? 0
+    }
 }

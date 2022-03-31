@@ -23,13 +23,6 @@ class GratitudeService {
         userRef.setValue(dataDictionary)
     }
     
-//    public func currentDate() -> String {
-//        let date = Date()
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "EEEE\nMMMM d, yyyy"
-//        return dateFormatter.string(from: date)
-//    }
-//
     public func currentDate() -> String {
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -44,5 +37,9 @@ class GratitudeService {
                 completion(userData)
             }
         }) { (error) in print(error.localizedDescription) }
+    }
+    
+    public func removeData(key: String) {
+        reference.child("uuid/\(key)").removeValue()
     }
 }

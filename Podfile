@@ -8,5 +8,9 @@ target 'Gratitude Journal' do
 
    pod 'Firebase/Database'
    pod 'SwiftyJSON'
+   pod 'IQKeyboardManagerSwift'
+   pod 'Firebase/Core'
+   pod 'Firebase/Auth'
+   pod 'Firebase/Firestore'
 
 end

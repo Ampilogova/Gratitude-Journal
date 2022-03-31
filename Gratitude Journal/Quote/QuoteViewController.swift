@@ -34,7 +34,7 @@ class QuoteViewController: UIViewController {
     private let authorLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .customAuthorColor
+        label.textColor = .customGrayColor
         label.textAlignment = .left
         return label
     }()
@@ -52,17 +52,10 @@ class QuoteViewController: UIViewController {
         return image
     }()
     
-    let menuBar: UIView = {
-        let menuBar = UIView()
-        menuBar.backgroundColor = .white
-        menuBar.translatesAutoresizingMaskIntoConstraints = false
-        return menuBar
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadQuote() 
+        loadQuote()
     }
     
     private func loadQuote() {
@@ -87,15 +80,6 @@ class QuoteViewController: UIViewController {
     // MARK: - Navigation
     
     private func setupUI() {
-//        menuBar.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(menuBar)
-//        NSLayoutConstraint.activate([
-//            menuBar.topAnchor.constraint(equalTo: view.topAnchor),
-//            menuBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            menuBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            menuBar.heightAnchor.constraint(equalToConstant: 55)
-//        ])
-        
         quoteImage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(quoteImage)
         NSLayoutConstraint.activate([

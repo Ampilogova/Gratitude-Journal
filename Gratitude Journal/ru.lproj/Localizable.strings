@@ -1,0 +1,40 @@
+/* 
+  Localizeble.strings
+  Gratitude Journal
+
+  Created by Tatiana Ampilogova on 3/30/22.
+  
+*/
+
+"journal" = "Журнал";
+"add.note" = "Создать заметку";
+"quotes" = "Цитаты";
+"settings" = "Настройки";
+"today" = "Сегодня";
+"delete" = "Удалить";
+"edit" = "Редактировать";
+"Search.notes" = "Искать по заметкам";
+"daily.thought" = "Дневник благодарности";
+"save" = "Сохранить";
+"notifications" = "Notifications";
+"gratefuli" = "Gratefuli";
+
+//signUp
+"create.account" = "Создать аккаунт";
+"login" = "Логин";
+"name" = "Имя";
+"password" = "Пароль";
+
+//Weekday
+"sun" = "Вскр";
+"mon" = "Пнд";
+"tue" = "Вт";
+"wed" = "Ср";
+"thu" = "Чтв";
+"fri" = "Птн";
+"sat" = "Сб";
+    
+"time" = "В какое время вы хотите писать благодарности?";
+"morning" = "Вы можете выбрать любое время, но мы рекомендуем делать это первым делом с утра";
+"day" = "В какие дни недели вы бы хотели писать благодарности?";
+"recommend" = "Лучше каждый день, но мы рекомендуем выбрать не менее пяти";
