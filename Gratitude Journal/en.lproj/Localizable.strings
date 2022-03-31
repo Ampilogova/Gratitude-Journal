@@ -18,11 +18,14 @@
 "save" = "Save";
 "notifications" = "Notifications";
 
-//signUp
+
+//signUp/In
 "create.account" = "Create account";
 "login" = "Login";
 "name" = "Name";
 "password" = "Pasword";
+"welcome.back" = "Welcome back!";
+"start" = "Get started";
 
 //Weekday
 "sun" = "Sun";

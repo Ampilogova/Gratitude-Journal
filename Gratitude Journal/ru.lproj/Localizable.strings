@@ -19,11 +19,13 @@
 "notifications" = "Notifications";
 "gratefuli" = "Gratefuli";
 
-//signUp
+//signUp/In
 "create.account" = "Создать аккаунт";
 "login" = "Логин";
 "name" = "Имя";
 "password" = "Пароль";
+"welcome.back" = "Мы рады видеть вас снова!";
+"start" = "Начать";
 
 //Weekday
 "sun" = "Вскр";

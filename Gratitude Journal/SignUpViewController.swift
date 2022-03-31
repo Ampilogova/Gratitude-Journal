@@ -57,7 +57,7 @@ class SignUpViewController: UIViewController, Alert {
     private var button: UIButton = {
         var button = UIButton()
         button.backgroundColor = .customBackgroundColor
-        button.setTitle(loc("save"), for: .normal)
+        button.setTitle(loc("start"), for: .normal)
         button.makeCellRounded()
         button.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
         NSLayoutConstraint.activate([
@@ -69,7 +69,7 @@ class SignUpViewController: UIViewController, Alert {
     var emptyView: UIView = {
         let view = UIView()
         NSLayoutConstraint.activate([
-            view.heightAnchor.constraint(equalToConstant: 200)
+            view.heightAnchor.constraint(equalToConstant: 260)
         ])
         return view
     }()
@@ -88,7 +88,7 @@ class SignUpViewController: UIViewController, Alert {
         stackView.axis = .vertical
         stackView.spacing = 15
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -120)
