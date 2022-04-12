@@ -9,15 +9,15 @@ import Foundation
 import SwiftyJSON
 
 public struct QuoteModel {
-    public let quote: String?
-    public let quoteRu: String?
-    public let author: String?
-    public let authorRu: String?
+    public let quote: String
+    public let quoteRu: String
+    public let author: String
+    public let authorRu: String
     
-//    public var localizedTitle: String {
-//        let isEnglish = loc("Localization") == "English"
-//        return isEnglish ? quote : quoteRu
-//    }
+    public var localizedTitle: (String, String) {
+        let isEnglish = loc("Localization") == "English"
+        return isEnglish ? (quote, author) : (quoteRu, authorRu)
+    }
     
     static func from(_ json: JSON) -> QuoteModel {
         return QuoteModel(quote: json["quote"].stringValue,
@@ -32,7 +32,7 @@ public struct QuoteModel {
         let author = dict["author"] as? String
         let authorRu = dict["authorRu"] as? String
         
-        return QuoteModel(quote: quote, quoteRu: quoteRu, author: author, authorRu: authorRu)
+        return QuoteModel(quote: quote ?? "", quoteRu: quoteRu ?? "", author: author ?? "", authorRu: authorRu ?? "")
     }
 }
 

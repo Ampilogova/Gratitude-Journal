@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 struct Setting {
     let name: String
+    let icon: UIImage
 }
 

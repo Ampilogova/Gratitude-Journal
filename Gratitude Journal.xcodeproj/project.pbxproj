@@ -19,7 +19,7 @@
 		CE244CC22797414E00278B76 /* GratitudeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE244CC12797414E00278B76 /* GratitudeModel.swift */; };
 		CE25F13E27E5053E00A2666E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE25F13D27E5053E00A2666E /* GoogleService-Info.plist */; };
 		CE3B8AFC27F5277900E14AFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE3B8AFE27F5277900E14AFD /* Localizable.strings */; };
-		CEA91ECD27E8FE1500A16C4E /* DatabaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA91ECC27E8FE1500A16C4E /* DatabaseReference.swift */; };
+		CE8CB28927F805820003DA17 /* EditGratitudeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CB28827F805820003DA17 /* EditGratitudeViewController.swift */; };
 		CEB14B28278E5837002B294C /* GratitudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB14B27278E5837002B294C /* GratitudeService.swift */; };
 		CEBBD4082787A460002F762B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4072787A45F002F762B /* UIColor.swift */; };
 		CEBBD40A2787BE5D002F762B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4092787BE5D002F762B /* TabBar.swift */; };
@@ -35,7 +35,6 @@
 		CEBBD42227891134002F762B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD42127891134002F762B /* UIView.swift */; };
 		CEC17E0B27F4BB1200FC67BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC17E0A27F4BB1200FC67BE /* LogInViewController.swift */; };
 		CEC17E0D27F4BB3400FC67BE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC17E0C27F4BB3400FC67BE /* WelcomeViewController.swift */; };
-		CEC17E0F27F4EFD700FC67BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC17E0E27F4EFD500FC67BE /* LaunchScreen.storyboard */; };
 		CECE2EF727ED3F7500CBBBE1 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE2EF627ED3F7500CBBBE1 /* CreateNoteViewController.swift */; };
 		CEE21DE527EA5C5C00841955 /* JSONParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE21DE427EA5C5B00841955 /* JSONParsable.swift */; };
 		CEE8117627F0262900CFC23C /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8117527F0262900CFC23C /* QuoteViewController.swift */; };
@@ -61,7 +60,7 @@
 		CE25F13D27E5053E00A2666E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CE3B8AFD27F5277900E14AFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE3B8AFF27F5277C00E14AFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CEA91ECC27E8FE1500A16C4E /* DatabaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReference.swift; sourceTree = "<group>"; };
+		CE8CB28827F805820003DA17 /* EditGratitudeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGratitudeViewController.swift; sourceTree = "<group>"; };
 		CEB14B27278E5837002B294C /* GratitudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeService.swift; sourceTree = "<group>"; };
 		CEBBD4072787A45F002F762B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CEBBD4092787BE5D002F762B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -77,7 +76,6 @@
 		CEBBD42127891134002F762B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CEC17E0A27F4BB1200FC67BE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		CEC17E0C27F4BB3400FC67BE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		CEC17E0E27F4EFD500FC67BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../../../../.Trash/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECE2EF627ED3F7500CBBBE1 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		CEE21DE427EA5C5B00841955 /* JSONParsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParsable.swift; sourceTree = "<group>"; };
 		CEE8117527F0262900CFC23C /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 			children = (
 				CE08797027862D0400C3105E /* AppDelegate.swift */,
 				CE08797227862D0400C3105E /* SceneDelegate.swift */,
-				CEA91ECC27E8FE1500A16C4E /* DatabaseReference.swift */,
 				CEBBD4092787BE5D002F762B /* TabBar.swift */,
 				CEC17E0C27F4BB3400FC67BE /* WelcomeViewController.swift */,
 				CE14C12D27F3BFEC00CD4CA4 /* SignUpViewController.swift */,
@@ -147,7 +144,6 @@
 				CEBBD40F2788CF46002F762B /* Localize.swift */,
 				CE3B8AFE27F5277900E14AFD /* Localizable.strings */,
 				CE08797927862D0A00C3105E /* Assets.xcassets */,
-				CEC17E0E27F4EFD500FC67BE /* LaunchScreen.storyboard */,
 				CE08797E27862D0A00C3105E /* Info.plist */,
 				CE25F13D27E5053E00A2666E /* GoogleService-Info.plist */,
 			);
@@ -158,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				CECE2EF627ED3F7500CBBBE1 /* CreateNoteViewController.swift */,
+				CE8CB28827F805820003DA17 /* EditGratitudeViewController.swift */,
 			);
 			path = Gratitude;
 			sourceTree = "<group>";
@@ -301,7 +298,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC17E0F27F4EFD700FC67BE /* LaunchScreen.storyboard in Resources */,
 				CE3B8AFC27F5277900E14AFD /* Localizable.strings in Resources */,
 				CE08797A27862D0A00C3105E /* Assets.xcassets in Resources */,
 				CE25F13E27E5053E00A2666E /* GoogleService-Info.plist in Resources */,
@@ -365,7 +361,6 @@
 				CE14C12C27F3780400CD4CA4 /* Alert.swift in Sources */,
 				CEBBD4182788D560002F762B /* NotificationViewController.swift in Sources */,
 				CE244CBE27923C0300278B76 /* GratitudeJournalTableViewController.swift in Sources */,
-				CEA91ECD27E8FE1500A16C4E /* DatabaseReference.swift in Sources */,
 				CEBBD4082787A460002F762B /* UIColor.swift in Sources */,
 				CEE8117627F0262900CFC23C /* QuoteViewController.swift in Sources */,
 				CEBBD41C2788D59C002F762B /* DateCell.swift in Sources */,
@@ -382,6 +377,7 @@
 				CEBBD40E2788CEF6002F762B /* Setting.swift in Sources */,
 				CEBBD4152788CFFC002F762B /* NSObject.swift in Sources */,
 				CE14C13027F3C96200CD4CA4 /* FirebaseAuthManager.swift in Sources */,
+				CE8CB28927F805820003DA17 /* EditGratitudeViewController.swift in Sources */,
 				CE08797327862D0400C3105E /* SceneDelegate.swift in Sources */,
 				CEBBD41E2788E102002F762B /* UIView+Layout.swift in Sources */,
 				CEBBD40C2788CEBA002F762B /* SettingsViewController.swift in Sources */,
@@ -534,6 +530,7 @@
 				INFOPLIST_FILE = "Gratitude Journal/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -562,6 +559,7 @@
 				INFOPLIST_FILE = "Gratitude Journal/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

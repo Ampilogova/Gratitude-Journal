@@ -10,14 +10,17 @@ import MessageUI
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
     
+    let gratitudeService = GratitudeService()
+    
     let settings = [
-        Setting(name: "notifications"),
-        Setting(name: "send.feedback"),
+        Setting(name: loc("notifications"), icon: UIImage(systemName: "bell.square.fill")!),
+        Setting(name: loc("send.feedback"), icon: UIImage(systemName: "envelope.fill")!),
+        Setting(name: loc("log.out"), icon: UIImage(systemName: "arrowshape.turn.up.right.fill")!),
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = loc("settings")
+        setupNavigationBar()
         createTable()
     }
     
@@ -29,6 +32,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         settingTableView.register(SettingsCell.self, forCellReuseIdentifier: SettingsCell.className)
         settingTableView.dataSource = self
+        
+        settingTableView.separatorStyle = .none
+    }
+    
+    private func setupNavigationBar() {
+         self.title = loc("settings")
+         navigationItem.largeTitleDisplayMode = .automatic
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,7 +63,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             self.navigationController?.pushViewController(viewController, animated: true)
         } else if indexPath.row == 1 {
             showMailComposer()
+        } else if indexPath.row == 2 {
+            gratitudeService.logoutUser()
+            self.tabBarController?.navigationController?.popToRootViewController(animated: true)
         }
+    }
+    
+    private func tableView(tableView: UITableView, heightForRowAt indexPath: NSIndexPath) -> CGFloat {
+        return 100.0 
     }
     
     func showMailComposer() {

@@ -9,27 +9,32 @@ import UIKit
 import Firebase
 
 class GratitudeJournalTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate {
-     
+
      private var gratitudeService = GratitudeService()
      private var tableView = UITableView()
      private var viewModel = UserData(data: [:])
      private var searchController = UISearchController()
-     private var result = [[String]]()
-     
+     private var allGratitudes = [GratitudeModel]()
+     private var gratitudes = [GratitudeModel]()
+
      override func viewDidLoad() {
           super.viewDidLoad()
           self.view.backgroundColor = .customBackgroundColor
-          searchController.delegate = self
-          setupNavigationBar()
           setupTableView()
           createSearchBar()
+          setupNavigationBar()
+     }
+     
+     override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(true)
           loadData()
      }
      
      private func loadData() {
-          gratitudeService.loadData { result in
-               self.viewModel = result
+          gratitudeService.loadGratitudes { result in
                DispatchQueue.main.async {
+                    self.gratitudes = result
+                    self.allGratitudes = result
                     self.tableView.reloadData()
                }
           }
@@ -42,23 +47,34 @@ class GratitudeJournalTableViewController: UIViewController, UITableViewDelegate
           tableView.delegate = self
           tableView.dataSource = self
           tableView.backgroundColor = .customBackgroundColor
-          tableView.pinToSuperview()
+          
+          tableView.translatesAutoresizingMaskIntoConstraints = false
           self.view.addSubview(tableView)
+          NSLayoutConstraint.activate([
+               tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+               tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+               tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+               tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+          ])
      }
      
      private func setupNavigationBar() {
           self.title = loc("gratefuli")
-          
+          navigationController?.navigationBar.prefersLargeTitles = true
+          navigationItem.largeTitleDisplayMode = .automatic
           let appearance = UINavigationBarAppearance()
           appearance.backgroundColor = .customBackgroundColor
           appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
           appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-          
           navigationController?.navigationBar.prefersLargeTitles = true
-          navigationController?.navigationBar.tintColor = .customLabelColor
+          navigationController?.navigationBar.barTintColor = .customLabelColor
           navigationController?.navigationBar.standardAppearance = appearance
           navigationController?.navigationBar.compactAppearance = appearance
           navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
+          let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+          add.tintColor = .customYellowColor
+          navigationItem.rightBarButtonItems = [add]
      }
      
      private func createSearchBar() {
@@ -66,38 +82,30 @@ class GratitudeJournalTableViewController: UIViewController, UITableViewDelegate
           searchController.searchResultsUpdater = self
           searchController.searchBar.tintColor = .customLabelColor
           searchController.searchBar.searchTextField.backgroundColor = .white
-          self.navigationItem.searchController = searchController
+          searchController.delegate = self
           
+          self.navigationItem.searchController = searchController
           searchController.searchResultsUpdater = self
-          //        searchController.dimsBackgroundDuringPresentation = false
           definesPresentationContext = true
      }
      
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          if searchController.isActive && searchController.searchBar.text != "" {
-               return result.count
-          }
-          return viewModel.data.count
+          return gratitudes.count
      }
      
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: GratitudeCell.className, for: indexPath) as! GratitudeCell
-          let keyArray = Array(viewModel.data.keys).sorted(by: { $0 > $1 })
-          let currentKey = keyArray[indexPath.row]
-          
-          if searchController.isActive && searchController.searchBar.text != "" {
-               //            gratitudeModel = result[indexPath.row]
-          } else {
-               if let dict = self.viewModel.data[currentKey] as? [String: Any],
-                  let model = GratitudeModel.from(dict) {
-                    cell.configure(with: model)
-               }
-          }
+          let filtered = gratitudes.sorted(by: { $0.key ?? "" > $1.key ?? "" })
+          cell.configure(with: filtered[indexPath.row])
+
           return cell
      }
      
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          
+          let filtered = gratitudes.sorted(by: { $0.key ?? "" > $1.key ?? "" })
+          let gratitudeSelected = filtered[indexPath.row]
+          let vc = EditGratitudeViewController(text: gratitudeSelected.gratitude ?? "", date: gratitudeSelected.date ?? "", key: gratitudeSelected.key ?? "")
+          self.navigationController?.pushViewController(vc, animated: true)
      }
      
      func updateSearchResults(for searchController: UISearchController) {
@@ -110,38 +118,17 @@ class GratitudeJournalTableViewController: UIViewController, UITableViewDelegate
           return .none
      }
      
-     func tableView(_ tableView: UITableView,
-                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-          let keyArray = Array((self.viewModel.data.keys)).sorted(by: { $0 > $1 })
-          let currentKey = keyArray[indexPath.row]
-          
-          let delete = UIContextualAction(style: .destructive,
-                                          title: loc("delete")) { [weak self] (action, view, completionHandler) in
-               self?.viewModel.data.removeValue(forKey: currentKey)
-               tableView.deleteRows(at: [indexPath], with: .fade)
-               self?.gratitudeService.removeData(key: currentKey)
-               completionHandler(true)
-          }
-          delete.backgroundColor = .systemRed
-          
-          let edit = UIContextualAction(style: .normal,
-                                        title: loc("edit")) { [weak self] (action, view, completionHandler) in
-               if let dict = self?.viewModel.data[currentKey] as? [String: Any],
-                  let model = GratitudeModel.from(dict) {
-                    let vc = CreateNoteViewController(text: model.gratitude ?? "")
-                    self?.navigationController?.pushViewController(vc, animated: true)
-               }
-               completionHandler(true)
-          }
-          edit.backgroundColor = .customYellowColor
-          
-          return UISwipeActionsConfiguration(actions: [delete, edit])
-     }
-     
      private func filterGratitude(searchText: String) {
-          let value = Array(viewModel.data.values)
-          
+          if searchText.count > 0 {
+               gratitudes = allGratitudes.filter({ $0.gratitude?.contains(searchText) == true })
+          } else {
+               gratitudes = allGratitudes
+          }
           tableView.reloadData()
+     }
+     @objc private func addTapped() {
+          let vc = CreateNoteViewController()
+          self.navigationController?.pushViewController(vc, animated: true)
      }
 }
 

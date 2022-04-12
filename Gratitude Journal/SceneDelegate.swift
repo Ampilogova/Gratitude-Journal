@@ -14,15 +14,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        let home = UINavigationController(rootViewController: TabBar())
         let window = UIWindow(windowScene: windowScene)
-        if Auth.auth().currentUser != nil {
+        let home = TabBar()
+        
+        if UserDefaults.standard.value(forKey: "isLogin") != nil {
             window.rootViewController = home
-        } else {
-            let loginNavController = UINavigationController(rootViewController: WelcomeViewController())
-            window.rootViewController = loginNavController
-        }
+         } else {
+             let loginNavController =  UINavigationController(rootViewController: WelcomeViewController())
+             loginNavController.navigationBar.isHidden = true
+             window.rootViewController = loginNavController
+         }
         window.makeKeyAndVisible()
         window.backgroundColor = .white
         self.window = window

@@ -29,7 +29,7 @@ class SignUpViewController: UIViewController, Alert {
         return textField
     }()
     
-    var emailView: UIView = {
+    private var emailView: UIView = {
         let view = UIView()
         view.backgroundColor = .customCellBackgroundColor
         view.makeCellRounded()
@@ -40,14 +40,14 @@ class SignUpViewController: UIViewController, Alert {
         let textField = UITextField()
         textField.placeholder = loc("password")
         textField.makeCellRounded()
+        textField.isSecureTextEntry = true
         NSLayoutConstraint.activate([
             textField.heightAnchor.constraint(equalToConstant: 60)
         ])
         return textField
     }()
     
-    
-    var passwordView: UIView = {
+    private var passwordView: UIView = {
         let view = UIView()
         view.backgroundColor = .customCellBackgroundColor
         view.makeCellRounded()
@@ -61,17 +61,25 @@ class SignUpViewController: UIViewController, Alert {
         button.makeCellRounded()
         button.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
         NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 50)
+            button.heightAnchor.constraint(equalToConstant: 60)
         ])
         return button
     }()
     
-    var emptyView: UIView = {
+    private var emptyView: UIView = {
         let view = UIView()
         NSLayoutConstraint.activate([
-            view.heightAnchor.constraint(equalToConstant: 260)
+            view.heightAnchor.constraint(equalToConstant: 180)
         ])
         return view
+    }()
+    
+    private var backgroundImage: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.image = UIImage(named: "logIn")
+        imageView.contentMode = .scaleToFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     private var stackView = UIStackView()
@@ -83,6 +91,15 @@ class SignUpViewController: UIViewController, Alert {
     }
     
     private func setupUI() {
+        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(backgroundImage)
+        NSLayoutConstraint.activate([
+            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
         stackView.axis = .vertical
@@ -113,24 +130,23 @@ class SignUpViewController: UIViewController, Alert {
         ])
         
         stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(emptyView)
         stackView.addArrangedSubview(emailView)
         stackView.addArrangedSubview(passwordView)
+        stackView.addArrangedSubview(emptyView)
         stackView.addArrangedSubview(button)
     }
     
     @objc func didTapSignUpButton() {
         let signUpManager = FirebaseAuthManager()
         if let email = emailTextField.text, let password = passwordTextField.text {
-            signUpManager.createUser(email: email, password: password) {[weak self] (success) in
+            signUpManager.createUser(email: email, password: password) {[weak self]  success, error  in
                 guard let `self` = self else { return }
-                var message: String = ""
-                if (success) {
-                    message = "User was sucessfully created."
-                    self.showAlert(title: "done", message: message)
+                if success {
+                    UserDefaults.standard.set("1", forKey: "isLogin")
+                    let vc = TabBar()
+                    self.navigationController?.pushViewController(vc, animated: true)
                 } else {
-                    message = "There was an error."
-                    self.showAlert(title: "done", message: message)
+                    self.showAlert(title: loc("error"), message: error)
                 }
             }
         }

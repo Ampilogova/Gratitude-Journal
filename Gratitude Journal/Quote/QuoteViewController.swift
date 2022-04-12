@@ -14,7 +14,7 @@ class QuoteViewController: UIViewController {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "Quotes of the day"
+        label.text = loc("quotes.day")
         label.font = .boldSystemFont(ofSize: 34)
         label.textColor = .customblackColor
         label.textAlignment = .left
@@ -71,12 +71,12 @@ class QuoteViewController: UIViewController {
         let randomKey = dict.data.keys.randomElement()
         if let dict = dict.data[randomKey ?? ""] as? [String: Any],
            let model = QuoteModel.from(dict) {
-            self.authorLabel.text = model.author
-            self.quoteLabel.text = model.quote
+            let result = model.localizedTitle
+            self.authorLabel.text = result.1
+            self.quoteLabel.text = result.0
         }
     }
     
-
     // MARK: - Navigation
     
     private func setupUI() {

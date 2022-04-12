@@ -11,9 +11,9 @@ import SwiftyJSON
 
 class QuoteService {
     
-    var reference = Database.database().reference(withPath: "Gratitude journal")
+    var reference = Database.database().reference()
     
-    public func createHabitsIdeas() {
+    public func createQuote() {
         let value1 = ["quote": "\"To improve is to change, to be perfect is to change often\".",
                       "quoteRu": "\"Совершенствоваться – значит меняться, быть совершенным – значит меняться часто\".",
                       "author": "Winston Churchill",
