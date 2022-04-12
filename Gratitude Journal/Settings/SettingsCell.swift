@@ -20,14 +20,29 @@ class SettingsCell: UITableViewCell {
         return label
     }()
     
+    private var icon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.tintColor = .customBackgroundColor
+        return imageView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        contentView.addSubview(icon)
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            icon.heightAnchor.constraint(equalToConstant: 20),
+            icon.widthAnchor.constraint(equalToConstant: 20),
+            icon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            icon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+        ])
         
         contentView.addSubview(nameSettingLabel)
         nameSettingLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             nameSettingLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            nameSettingLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+            nameSettingLabel.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 10)
         ])
     }
     required init(coder aDecoder: NSCoder) {
@@ -36,5 +51,6 @@ class SettingsCell: UITableViewCell {
     
     func configure(with model: Setting) {
         nameSettingLabel.text = model.name
+        icon.image = model.icon
     }
 }

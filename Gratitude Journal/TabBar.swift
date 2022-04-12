@@ -27,11 +27,7 @@ class TabBar: UITabBarController, UITabBarControllerDelegate {
         let gratitudeJournalIcon = UITabBarItem(title: loc("journal"), image: UIImage(systemName: "book"), tag: 0)
         gratitudeJournal.tabBarItem = gratitudeJournalIcon
         
-        let createNote = UINavigationController(rootViewController: CreateNoteViewController(text: ""))
-        let createNoteIcon = UITabBarItem(title: loc("add.note"), image: UIImage(systemName: "square.and.pencil"), tag: 1)
-        createNote.tabBarItem = createNoteIcon
-        
-        let quotes = UINavigationController(rootViewController: QuoteViewController())
+        let quotes = QuoteViewController()
         let quotesIcon = UITabBarItem(title: loc("quotes"), image: UIImage(systemName: "list.dash"), tag: 2)
         quotes.tabBarItem = quotesIcon
         
@@ -39,7 +35,7 @@ class TabBar: UITabBarController, UITabBarControllerDelegate {
         let settingsIcon = UITabBarItem(title: loc("settings"), image: UIImage(systemName: "gear"), tag: 3)
         settings.tabBarItem = settingsIcon
         
-        let controllers = [gratitudeJournal, createNote, quotes, settings]
+        let controllers = [gratitudeJournal, quotes, settings]
         self.viewControllers = controllers
     }
     

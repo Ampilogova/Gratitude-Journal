@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotificationViewController: UIViewController, DateCollectionViewDelegate  {
+class NotificationViewController: UIViewController, DateCollectionViewDelegate, Alert {
     
     var dateCollectionView = DateCollectionView()
     private let notificationService = NotificationService()
@@ -16,44 +16,45 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate  
     private let timeTitleLabel: UILabel = {
         let label = UILabel()
         label.text = loc("time")
-        label.font = .boldSystemFont(ofSize: 24)
+        label.font = .boldSystemFont(ofSize: 20)
         label.textColor = .customblackColor
         label.textAlignment = .left
-        label.numberOfLines = 2
+        label.numberOfLines = 4
         return label
     }()
     
     private let timeSubtitleLabel: UILabel = {
         let label = UILabel()
         label.text = loc("morning")
-        label.font = .systemFont(ofSize: 17)
+        label.font = .systemFont(ofSize: 15)
         label.textColor = .customGrayColor
         label.textAlignment = .left
-        label.numberOfLines = 2
+        label.numberOfLines = 4
         return label
     }()
     
     private let dateTitleLabel: UILabel = {
         let label = UILabel()
         label.text = loc("day")
-        label.font = .boldSystemFont(ofSize: 24)
+        label.font = .boldSystemFont(ofSize: 20)
         label.textColor = .customblackColor
         label.textAlignment = .left
-        label.numberOfLines = 2
+        label.numberOfLines = 4
         return label
     }()
     
     private let dateSubtitleLabel: UILabel = {
         let label = UILabel()
         label.text = loc("recommend")
-        label.font = .systemFont(ofSize: 17)
+        label.font = .systemFont(ofSize: 15)
         label.textColor = .customGrayColor
         label.textAlignment = .left
-        label.numberOfLines = 2
+        label.numberOfLines = 4
         return label
     }()
     
-    let datePicker = UIDatePicker()
+    private let datePicker = UIDatePicker()
+    private let collectionView = UIView()
     
     let button: UIButton = {
         var button = UIButton()
@@ -61,17 +62,13 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate  
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .customBackgroundColor
         button.makeCellRounded()
-        NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 50)
-        ])
         button.addTarget(self, action: #selector(saveData), for: .touchUpInside)
         return button
     }()
     
-    var stackView = UIStackView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         self.title = loc("notifications")
         navigationController?.navigationBar.prefersLargeTitles = false
         showDatePicker()
@@ -80,24 +77,73 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate  
     }
     
     private func setupUI() {
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(stackView)
-        stackView.axis = .vertical
-        stackView.spacing = 15
+        timeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(timeTitleLabel)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -120)
+            timeTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            timeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            timeTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+        ])
+
+        timeSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(timeSubtitleLabel)
+        NSLayoutConstraint.activate([
+            timeSubtitleLabel.topAnchor.constraint(equalTo: timeTitleLabel.bottomAnchor, constant: 5),
+            timeSubtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            timeSubtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
         ])
         
-        stackView.addArrangedSubview(timeTitleLabel)
-        stackView.addArrangedSubview(timeSubtitleLabel)
-        stackView.addArrangedSubview(datePicker)
-        stackView.addArrangedSubview(dateTitleLabel)
-        stackView.addArrangedSubview(dateSubtitleLabel)
-        stackView.addArrangedSubview(dateCollectionView.view)
-        stackView.addArrangedSubview(button)
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(datePicker)
+        NSLayoutConstraint.activate([
+            datePicker.heightAnchor.constraint(equalTo: datePicker.heightAnchor),
+            datePicker.topAnchor.constraint(equalTo: timeSubtitleLabel.bottomAnchor, constant: 5),
+            datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+        ])
+        
+        dateTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dateTitleLabel)
+        NSLayoutConstraint.activate([
+            dateTitleLabel.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 15),
+            dateTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            dateTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+        ])
+        
+        dateSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dateSubtitleLabel)
+        NSLayoutConstraint.activate([
+            dateSubtitleLabel.topAnchor.constraint(equalTo: dateTitleLabel.bottomAnchor, constant: 5),
+            dateSubtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            dateSubtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+        ])
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.heightAnchor.constraint(equalToConstant: 80),
+            collectionView.topAnchor.constraint(equalTo: dateSubtitleLabel.bottomAnchor, constant: 5),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6),
+        ])
+        
+        dateCollectionView.view.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.addSubview(dateCollectionView.view)
+        NSLayoutConstraint.activate([
+            dateCollectionView.view.topAnchor.constraint(equalTo: collectionView.topAnchor),
+            dateCollectionView.view.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor),
+            dateCollectionView.view.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
+            dateCollectionView.view.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor),
+        ])
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(button)
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 60),
+            button.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 5),
+            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
+        ])
     }
     
     func showDatePicker() {
@@ -110,6 +156,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate  
         let hour = hourFormatter(hour: datePicker.date)
         let minute = minuteNotification(minute: datePicker.date)
         notificationService.notificationsScheduler(hours: hour, minute: minute, weekdays: days)
+        self.showAlert(title: loc("save"), message: "")
     }
     
     func daySelected(days: [Int]) {

@@ -47,13 +47,13 @@ class DateCollectionView: UIViewController, UICollectionViewDataSource, UICollec
 
     private func collectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10,
-                                           left: 10,
-                                           bottom: 10,
-                                           right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 8,
+                                           left: 8,
+                                           bottom: 8,
+                                           right: 8)
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 8
+        layout.minimumLineSpacing = 10
         layout.itemSize = CGSize(width: 40, height: 40)
         
         return layout

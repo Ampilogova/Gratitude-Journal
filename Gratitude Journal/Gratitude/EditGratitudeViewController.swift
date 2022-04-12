@@ -1,20 +1,21 @@
 //
-//  GratitudeJournalViewController.swift
+//  EditGratitudeViewController.swift
 //  Gratitude Journal
 //
-//  Created by Tatiana Ampilogova on 3/24/22.
+//  Created by Tatiana Ampilogova on 4/1/22.
 //
 
 import UIKit
-import Firebase
 
-class CreateNoteViewController: UIViewController, UITextViewDelegate, Alert {
+class EditGratitudeViewController: UIViewController, UITextViewDelegate, Alert {
     
     private var gratitudeService = GratitudeService()
+    private var date = String()
+    private var key = String()
     
     private let label: UILabel = {
         let label = UILabel()
-        label.text = loc("3.things.greatful")
+        label.text = loc("was.grateful")
         label.font = .boldSystemFont(ofSize: 20)
         label.textColor = .customLabelColor
         label.textAlignment = .left
@@ -33,23 +34,42 @@ class CreateNoteViewController: UIViewController, UITextViewDelegate, Alert {
         return textView
     }()
     
-    private let button: UIButton = {
+    let updateButton: UIButton = {
         var button = UIButton()
-        button.setTitle("Save", for: .normal)
+        button.setTitle(loc("update"), for: .normal)
         button.setTitleColor(.customblackColor, for: .normal)
         button.backgroundColor = .customYellowColor
         button.makeCellRounded()
-        button.addTarget(self, action: #selector(saveData), for: .touchUpInside)
+        button.addTarget(self, action: #selector(update), for: .touchUpInside)
         return button
     }()
     
-    private var backgroundImage: UIImageView = {
+    let deleteButton: UIButton = {
+        var button = UIButton()
+        button.setImage(UIImage(systemName: "trash"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(deleteValue), for: .touchUpInside)
+        return button
+    }()
+    
+    var backgroundImage: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.image = UIImage(named: "backgroundImage")
         imageView.contentMode = .scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    init(text: String, date: String , key: String) {
+        self.textView.text = text
+        self.key = key
+        self.date = date
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +79,7 @@ class CreateNoteViewController: UIViewController, UITextViewDelegate, Alert {
     }
     
     private func setupNavigationBar() {
-        self.title = loc("today")
+        self.title = loc("edit.gratitude")
         
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .customBackgroundColor
@@ -100,13 +120,22 @@ class CreateNoteViewController: UIViewController, UITextViewDelegate, Alert {
             textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -160)
         ])
         
-        button.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(button)
+        updateButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(updateButton)
         NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 50),
-            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
+            updateButton.heightAnchor.constraint(equalToConstant: 50),
+            updateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            updateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+        ])
+        
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(deleteButton)
+        NSLayoutConstraint.activate([
+            deleteButton.heightAnchor.constraint(equalToConstant: 60),
+            deleteButton.widthAnchor.constraint(equalToConstant: 60),
+            deleteButton.topAnchor.constraint(equalTo: updateButton.bottomAnchor, constant: 5),
+            deleteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            deleteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -6)
         ])
     }
     
@@ -118,17 +147,23 @@ class CreateNoteViewController: UIViewController, UITextViewDelegate, Alert {
     
     // MARK: - Navigation
     
-    @objc private func saveData() {
-        alert()
+    @objc private func update() {
+        gratitudeService.editData(key: key, value: textView.text)
+        self.showAlert(title: loc("done"), message: loc("save.update"))
     }
     
-    private func alert()  {
-         let alertController = UIAlertController(title: loc("success"), message: loc("save.gratitude"), preferredStyle: .alert)
-
-        alertController.addAction(UIAlertAction(title: loc("ok"), style: .default, handler: { alert in
-            self.gratitudeService.saveData(gratitude: self.textView.text)
+    @objc private func deleteValue() {
+        deleteAlert(title: "", message: loc("delete.gratetude"))
+    }
+    
+    private func deleteAlert(title: String, message: String)  {
+         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: loc("cancel"), style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: loc("delete"), style: .default, handler: { alert in
+            self.gratitudeService.removeData(key: self.key)
             self.navigationController?.popToRootViewController(animated: true)
         }))
         present(alertController, animated: true, completion: nil)
     }
+
 }

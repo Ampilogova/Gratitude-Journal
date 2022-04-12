@@ -29,7 +29,7 @@ class LogInViewController: UIViewController, Alert {
         return textField
     }()
     
-    var emailView: UIView = {
+    private var emailView: UIView = {
         let view = UIView()
         view.backgroundColor = .customCellBackgroundColor
         view.makeCellRounded()
@@ -40,6 +40,7 @@ class LogInViewController: UIViewController, Alert {
         let textField = UITextField()
         textField.placeholder = loc("password")
         textField.makeCellRounded()
+        textField.isSecureTextEntry = true
         NSLayoutConstraint.activate([
             textField.heightAnchor.constraint(equalToConstant: 60)
         ])
@@ -47,7 +48,7 @@ class LogInViewController: UIViewController, Alert {
     }()
     
     
-    var passwordView: UIView = {
+    private var passwordView: UIView = {
         let view = UIView()
         view.backgroundColor = .customCellBackgroundColor
         view.makeCellRounded()
@@ -57,21 +58,29 @@ class LogInViewController: UIViewController, Alert {
     private var button: UIButton = {
         var button = UIButton()
         button.backgroundColor = .customBackgroundColor
-        button.setTitle(loc("save"), for: .normal)
+        button.setTitle(loc("logIn"), for: .normal)
         button.makeCellRounded()
         button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 50)
+            button.heightAnchor.constraint(equalToConstant: 60)
         ])
         return button
     }()
     
-    var emptyView: UIView = {
+    private var emptyView: UIView = {
         let view = UIView()
         NSLayoutConstraint.activate([
-            view.heightAnchor.constraint(equalToConstant: 260)
+            view.heightAnchor.constraint(equalToConstant: 180)
         ])
         return view
+    }()
+    
+    private var backgroundImage: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.image = UIImage(named: "logIn")
+        imageView.contentMode = .scaleToFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     private var stackView = UIStackView()
@@ -83,6 +92,15 @@ class LogInViewController: UIViewController, Alert {
     }
     
     private func setupUI() {
+        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(backgroundImage)
+        NSLayoutConstraint.activate([
+            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
         stackView.axis = .vertical
@@ -113,9 +131,9 @@ class LogInViewController: UIViewController, Alert {
         ])
         
         stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(emptyView)
         stackView.addArrangedSubview(emailView)
         stackView.addArrangedSubview(passwordView)
+        stackView.addArrangedSubview(emptyView)
         stackView.addArrangedSubview(button)
     }
     
@@ -124,12 +142,12 @@ class LogInViewController: UIViewController, Alert {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         loginManager.signIn(email: email, pass: password) {[weak self] (success) in
             guard let `self` = self else { return }
-            var message = String()
             if (success) {
-                message = "User was sucessfully logged in."
+                UserDefaults.standard.set("1", forKey: "isLogin")
+                let vc = TabBar()
+                self.navigationController?.pushViewController(vc, animated: true)
             } else {
-                message = "There was an error."
-                self.showAlert(title: "done", message: message)
+                self.showAlert(title: "error", message: loc("wrong.login.password"))
             }
         }
     }

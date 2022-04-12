@@ -20,7 +20,7 @@ class WelcomeViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "We are what we do"
+        label.text = loc("what.we.do")
         label.font = .boldSystemFont(ofSize: 30)
         label.textColor = .customYellowColor
         label.textAlignment = .center
@@ -28,18 +28,18 @@ class WelcomeViewController: UIViewController {
     }()
     
     private let subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Thousand of people are usign Gratefuli for gratitude"
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 220, height: 50))
+        label.text = loc("thousand.people")
         label.font = .boldSystemFont(ofSize: 16)
         label.textColor = .customLabelColor
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         label.textAlignment = .center
         return label
     }()
     
     private var signUpButton: UIButton = {
         var button = UIButton()
-        button.setTitle("Sign Up", for: .normal)
+        button.setTitle(loc("signUp"), for: .normal)
         button.setTitleColor(.customblackColor, for: .normal)
         button.backgroundColor = .customYellowColor
         button.makeCellRounded()
@@ -52,7 +52,7 @@ class WelcomeViewController: UIViewController {
     
     private var logInButton: UIButton = {
         var button = UIButton()
-        button.setTitle("Log In", for: .normal)
+        button.setTitle(loc("logIn"), for: .normal)
         button.setTitleColor(.customblackColor, for: .normal)
         button.backgroundColor = .customLabelColor
         button.makeCellRounded()
@@ -70,20 +70,9 @@ class WelcomeViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
-    var emptyView: UIView = {
-        let view = UIView()
-        NSLayoutConstraint.activate([
-            view.heightAnchor.constraint(equalToConstant: 350)
-        ])
-        return view
-    }()
-    
-    var stackView = UIStackView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = false
         view.backgroundColor = .customBackgroundColor
         setupUI()
     }
@@ -98,25 +87,46 @@ class WelcomeViewController: UIViewController {
             backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(stackView)
-        stackView.axis = .vertical
-        stackView.spacing = 15
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(nameLabel)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -120)
+            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-        stackView.addArrangedSubview(nameLabel)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(subtitleLabel)
-        stackView.addArrangedSubview(emptyView)
-        stackView.addArrangedSubview(signUpButton)
-        stackView.addArrangedSubview(logInButton)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(subtitleLabel)
+        NSLayoutConstraint.activate([
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            subtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            subtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+        ])
+        
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(signUpButton)
+        NSLayoutConstraint.activate([
+            signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+        ])
+        
+        logInButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(logInButton)
+        NSLayoutConstraint.activate([
+            logInButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 10),
+            logInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            logInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            logInButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
+        ])
+        
     }
-    
     
     @objc func signUp() {
         let vc = SignUpViewController()

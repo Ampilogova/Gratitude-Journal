@@ -40,7 +40,7 @@ class GratitudeCell: UITableViewCell {
         label.font = .systemFont(ofSize: 12, weight: .light)
         label.textColor = .customblackColor
         label.textAlignment = .left
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         return label
     }()
     
@@ -80,8 +80,8 @@ class GratitudeCell: UITableViewCell {
         blotImage.translatesAutoresizingMaskIntoConstraints = false
         customView.addSubview(blotImage)
         NSLayoutConstraint.activate([
-            blotImage.heightAnchor.constraint(equalToConstant: 150),
-            blotImage.widthAnchor.constraint(equalToConstant: 124),
+            blotImage.heightAnchor.constraint(equalToConstant: 120),
+            blotImage.widthAnchor.constraint(equalToConstant: 120),
             blotImage.topAnchor.constraint(equalTo: customView.topAnchor, constant: 0),
             blotImage.leadingAnchor.constraint(equalTo: customView.leadingAnchor, constant: 0),
             blotImage.bottomAnchor.constraint(equalTo: customView.bottomAnchor, constant: 0),
@@ -99,7 +99,7 @@ class GratitudeCell: UITableViewCell {
         blotImage2.translatesAutoresizingMaskIntoConstraints = false
         customView.addSubview(blotImage2)
         NSLayoutConstraint.activate([
-            blotImage2.heightAnchor.constraint(equalToConstant: 108),
+            blotImage2.heightAnchor.constraint(equalToConstant: 80),
             blotImage2.widthAnchor.constraint(equalToConstant: 165),
             blotImage2.topAnchor.constraint(equalTo: customView.topAnchor, constant: 0),
             blotImage2.trailingAnchor.constraint(equalTo: customView.trailingAnchor, constant: 0),
@@ -115,15 +115,17 @@ class GratitudeCell: UITableViewCell {
         gratitudeLabel.translatesAutoresizingMaskIntoConstraints = false
         customView.addSubview(gratitudeLabel)
         NSLayoutConstraint.activate([
-            gratitudeLabel.topAnchor.constraint(equalTo: customView.topAnchor, constant: 30),
-            gratitudeLabel.leadingAnchor.constraint(equalTo: customView.leadingAnchor, constant: 103),
+            gratitudeLabel.topAnchor.constraint(equalTo: customView.topAnchor, constant: 20),
+            gratitudeLabel.leadingAnchor.constraint(equalTo: customView.leadingAnchor, constant: 95),
+            gratitudeLabel.trailingAnchor.constraint(equalTo: customView.trailingAnchor, constant: -10),
         ])
 
         textGratitudeLabel.translatesAutoresizingMaskIntoConstraints = false
         customView.addSubview(textGratitudeLabel)
         NSLayoutConstraint.activate([
-            textGratitudeLabel.topAnchor.constraint(equalTo: gratitudeLabel.bottomAnchor, constant: 10),
-            textGratitudeLabel.leadingAnchor.constraint(equalTo: gratitudeLabel.leadingAnchor),
+            textGratitudeLabel.topAnchor.constraint(equalTo: gratitudeLabel.bottomAnchor, constant: 5),
+            textGratitudeLabel.leadingAnchor.constraint(equalTo: gratitudeLabel.leadingAnchor, constant: 5),
+            textGratitudeLabel.trailingAnchor.constraint(equalTo: customView.trailingAnchor, constant: -5),
         ])
     }
     

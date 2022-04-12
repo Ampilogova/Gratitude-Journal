@@ -14,8 +14,8 @@ class NotificationService {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
         let content = UNMutableNotificationContent()
-        content.title = "gratitude.journal"
-        content.body = "notice"
+        content.title = loc("gratefuli")
+        content.body = loc("notice")
         content.sound = UNNotificationSound.default
         
         for day in weekdays {

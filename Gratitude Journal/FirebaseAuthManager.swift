@@ -8,13 +8,12 @@ import FirebaseAuth
 import UIKit
 
 class FirebaseAuthManager {
-    func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+    func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool, _ error: String) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
             if let user = authResult?.user {
-                print(user)
-                completionBlock(true)
+                completionBlock(true, error?.localizedDescription ?? "")
             } else {
-                completionBlock(false)
+                completionBlock(false, error?.localizedDescription ?? "")
             }
         }
     }

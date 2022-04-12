@@ -5,10 +5,14 @@
   Created by Tatiana Ampilogova on 3/30/22.
   
 */
+
+"Localization" = "English";
+
 "journal" = "Journal";
 "add.note" = "Add note";
 "quotes" = "Quotes";
 "settings" = "Settings";
+"send.feedback" = "Send feedback";
 "today" = "Today";
 "delete" = "Delete";
 "edit" = "Edit";
@@ -17,15 +21,28 @@
 "daily.thought" = "Daily Thought";
 "save" = "Save";
 "notifications" = "Notifications";
-
+"log.out" = "Log out";
+"was.grateful" = "3 things I was grateful for that day:";
+"3.things.greatful"= "3 things I'm greatful for...";
 
 //signUp/In
+
+"what.we.do" = "We are what we do";
+"thousand.people" = "Thousand of people are usign Gratefuli for gratitude";
+
+"logIn" = "Log in";
+"signUp" = "Sign up";
 "create.account" = "Create account";
-"login" = "Login";
-"name" = "Name";
+"update" = "Update";
+
+"login" = "email";
 "password" = "Pasword";
 "welcome.back" = "Welcome back!";
+
 "start" = "Get started";
+"user.exist" = "This email address is already being used";
+"error" = "Error";
+"wrong.login.password" = "The username or password is incorrect";
 
 //Weekday
 "sun" = "Sun";
@@ -40,3 +57,18 @@
 "morning" = "Any time you can choose but we recommend first thing in th morning";
 "day" = "Which day would you like to gratitude?";
 "recommend"= "Everyday is best, but we recommend picking at least five";
+
+//notification
+"notice" = "Want to be happy? Be grateful";
+
+//alert
+"save.gratitude" = "Thank you for taking time for yourself 🙌";
+"success" = "Saved to your journal";
+"save.update" = "Your journal has been updated";
+"done" = "Done!";
+"edit.gratitude" = "Edit gratitude";
+"save.notification" = "Done";
+"delete.gratetude" = "Are you sure you want to delete this note?";
+
+//Quotes
+"quotes.day" = "Quotes of the day";
