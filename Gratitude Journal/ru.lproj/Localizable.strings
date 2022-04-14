@@ -44,6 +44,7 @@
 "error" = "Ошибка";
 "wrong.login.password" = "Неверный логин или пароль";
 "update" = "Обновить";
+"save.note" = "Сохранить";
 //Weekday
 "sun" = "Вскр";
 "mon" = "Пнд";

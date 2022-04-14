@@ -43,6 +43,7 @@
 "user.exist" = "This email address is already being used";
 "error" = "Error";
 "wrong.login.password" = "The username or password is incorrect";
+"save.note" = "Save";
 
 //Weekday
 "sun" = "Sun";

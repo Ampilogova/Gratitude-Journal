@@ -16,7 +16,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
     private let timeTitleLabel: UILabel = {
         let label = UILabel()
         label.text = loc("time")
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 18)
         label.textColor = .customblackColor
         label.textAlignment = .left
         label.numberOfLines = 4
@@ -26,7 +26,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
     private let timeSubtitleLabel: UILabel = {
         let label = UILabel()
         label.text = loc("morning")
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 14)
         label.textColor = .customGrayColor
         label.textAlignment = .left
         label.numberOfLines = 4
@@ -36,7 +36,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
     private let dateTitleLabel: UILabel = {
         let label = UILabel()
         label.text = loc("day")
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 18)
         label.textColor = .customblackColor
         label.textAlignment = .left
         label.numberOfLines = 4
@@ -46,7 +46,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
     private let dateSubtitleLabel: UILabel = {
         let label = UILabel()
         label.text = loc("recommend")
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 14)
         label.textColor = .customGrayColor
         label.textAlignment = .left
         label.numberOfLines = 4
@@ -80,6 +80,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
         timeTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(timeTitleLabel)
         NSLayoutConstraint.activate([
+            timeTitleLabel.heightAnchor.constraint(equalToConstant: 45),
             timeTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
             timeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             timeTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
@@ -88,6 +89,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
         timeSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(timeSubtitleLabel)
         NSLayoutConstraint.activate([
+            timeSubtitleLabel.heightAnchor.constraint(equalToConstant: 35),
             timeSubtitleLabel.topAnchor.constraint(equalTo: timeTitleLabel.bottomAnchor, constant: 5),
             timeSubtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             timeSubtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
@@ -96,7 +98,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(datePicker)
         NSLayoutConstraint.activate([
-            datePicker.heightAnchor.constraint(equalTo: datePicker.heightAnchor),
+            datePicker.heightAnchor.constraint(equalToConstant: 100),
             datePicker.topAnchor.constraint(equalTo: timeSubtitleLabel.bottomAnchor, constant: 5),
             datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
@@ -105,7 +107,8 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
         dateTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dateTitleLabel)
         NSLayoutConstraint.activate([
-            dateTitleLabel.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 15),
+            dateTitleLabel.heightAnchor.constraint(equalToConstant: 45),
+            dateTitleLabel.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 10),
             dateTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             dateTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
         ])
@@ -113,17 +116,19 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
         dateSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dateSubtitleLabel)
         NSLayoutConstraint.activate([
+            dateSubtitleLabel.heightAnchor.constraint(equalToConstant: 35),
             dateSubtitleLabel.topAnchor.constraint(equalTo: dateTitleLabel.bottomAnchor, constant: 5),
             dateSubtitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             dateSubtitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
         ])
+        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            collectionView.heightAnchor.constraint(equalToConstant: 80),
+            collectionView.heightAnchor.constraint(equalToConstant: 70),
             collectionView.topAnchor.constraint(equalTo: dateSubtitleLabel.bottomAnchor, constant: 5),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 6),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -6),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
         ])
         
         dateCollectionView.view.translatesAutoresizingMaskIntoConstraints = false
@@ -138,11 +143,11 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
         button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button)
         NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 60),
-            button.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 5),
+            button.heightAnchor.constraint(equalToConstant: 50),
+            button.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
             button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
+            button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
     }
     
@@ -156,7 +161,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
         let hour = hourFormatter(hour: datePicker.date)
         let minute = minuteNotification(minute: datePicker.date)
         notificationService.notificationsScheduler(hours: hour, minute: minute, weekdays: days)
-        self.showAlert(title: loc("save"), message: "")
+        self.showAlert(title: loc("done"), message: "")
     }
     
     func daySelected(days: [Int]) {

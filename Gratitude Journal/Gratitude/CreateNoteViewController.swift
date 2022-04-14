@@ -35,7 +35,7 @@ class CreateNoteViewController: UIViewController, UITextViewDelegate, Alert {
     
     private let button: UIButton = {
         var button = UIButton()
-        button.setTitle("Save", for: .normal)
+        button.setTitle(loc("save.note"), for: .normal)
         button.setTitleColor(.customblackColor, for: .normal)
         button.backgroundColor = .customYellowColor
         button.makeCellRounded()
