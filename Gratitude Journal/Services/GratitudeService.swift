@@ -41,7 +41,7 @@ class GratitudeService {
     public func createKey(date: Date) -> String {
         let date = Date()
         let dateFormatter = DateFormatter()
-        
+        dateFormatter.locale = Locale(identifier: "en_US")
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
         return dateFormatter.string(from: date)
 }
