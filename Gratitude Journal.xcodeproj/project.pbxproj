@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		631EB2CB3F78F414326D259D /* Pods_GratitudeJournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD87BD41DF6FAC802C5446D /* Pods_GratitudeJournalTests.framework */; };
 		C27E27A6A8C3CB0AADAC90E2 /* Pods_Gratitude_Journal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC56167174FCA80EA5C09B5 /* Pods_Gratitude_Journal.framework */; };
 		CE08797127862D0400C3105E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797027862D0400C3105E /* AppDelegate.swift */; };
 		CE08797327862D0400C3105E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE08797227862D0400C3105E /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 		CEBBD42227891134002F762B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD42127891134002F762B /* UIView.swift */; };
 		CEC17E0B27F4BB1200FC67BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC17E0A27F4BB1200FC67BE /* LogInViewController.swift */; };
 		CEC17E0D27F4BB3400FC67BE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC17E0C27F4BB3400FC67BE /* WelcomeViewController.swift */; };
+		CEC8D773286A7E92003FCC49 /* GratitudeJournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8D772286A7E92003FCC49 /* GratitudeJournalTests.swift */; };
 		CECE2EF727ED3F7500CBBBE1 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE2EF627ED3F7500CBBBE1 /* CreateNoteViewController.swift */; };
 		CEE21DE527EA5C5C00841955 /* JSONParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE21DE427EA5C5B00841955 /* JSONParsable.swift */; };
 		CEE8117627F0262900CFC23C /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8117527F0262900CFC23C /* QuoteViewController.swift */; };
@@ -43,9 +45,22 @@
 		CEF4760F27F13A25002D3584 /* DateCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4760E27F13A25002D3584 /* DateCollectionView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CEC8D774286A7E92003FCC49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE08796527862D0400C3105E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE08796C27862D0400C3105E;
+			remoteInfo = "Gratitude Journal";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		125E6DD31D3D37351DD4E165 /* Pods-Gratitude Journal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gratitude Journal.release.xcconfig"; path = "Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal.release.xcconfig"; sourceTree = "<group>"; };
 		4DC56167174FCA80EA5C09B5 /* Pods_Gratitude_Journal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gratitude_Journal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70C61503EE2BA1D31879DF9E /* Pods-GratitudeJournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GratitudeJournalTests.release.xcconfig"; path = "Target Support Files/Pods-GratitudeJournalTests/Pods-GratitudeJournalTests.release.xcconfig"; sourceTree = "<group>"; };
+		9F21562D4A4E44FA03F29F02 /* Pods-GratitudeJournalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GratitudeJournalTests.debug.xcconfig"; path = "Target Support Files/Pods-GratitudeJournalTests/Pods-GratitudeJournalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CBD87BD41DF6FAC802C5446D /* Pods_GratitudeJournalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GratitudeJournalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE08796D27862D0400C3105E /* Gratitude Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gratitude Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE08797027862D0400C3105E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE08797227862D0400C3105E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +91,8 @@
 		CEBBD42127891134002F762B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CEC17E0A27F4BB1200FC67BE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		CEC17E0C27F4BB3400FC67BE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		CEC8D770286A7E92003FCC49 /* GratitudeJournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GratitudeJournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC8D772286A7E92003FCC49 /* GratitudeJournalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeJournalTests.swift; sourceTree = "<group>"; };
 		CECE2EF627ED3F7500CBBBE1 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		CEE21DE427EA5C5B00841955 /* JSONParsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParsable.swift; sourceTree = "<group>"; };
 		CEE8117527F0262900CFC23C /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +111,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEC8D76D286A7E92003FCC49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631EB2CB3F78F414326D259D /* Pods_GratitudeJournalTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -102,6 +127,8 @@
 			children = (
 				DB8E2D001F2966420475FF98 /* Pods-Gratitude Journal.debug.xcconfig */,
 				125E6DD31D3D37351DD4E165 /* Pods-Gratitude Journal.release.xcconfig */,
+				9F21562D4A4E44FA03F29F02 /* Pods-GratitudeJournalTests.debug.xcconfig */,
+				70C61503EE2BA1D31879DF9E /* Pods-GratitudeJournalTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -110,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				CE08796F27862D0400C3105E /* Gratitude Journal */,
+				CEC8D771286A7E92003FCC49 /* GratitudeJournalTests */,
 				CE08796E27862D0400C3105E /* Products */,
 				C675FCBF316D766C4C0879DE /* Pods */,
 				DA2A39CD6CF89F081FAEB2EA /* Frameworks */,
@@ -120,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				CE08796D27862D0400C3105E /* Gratitude Journal.app */,
+				CEC8D770286A7E92003FCC49 /* GratitudeJournalTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +241,14 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		CEC8D771286A7E92003FCC49 /* GratitudeJournalTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEC8D772286A7E92003FCC49 /* GratitudeJournalTests.swift */,
+			);
+			path = GratitudeJournalTests;
+			sourceTree = "<group>";
+		};
 		CEE8117727F0262F00CFC23C /* Quote */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				4DC56167174FCA80EA5C09B5 /* Pods_Gratitude_Journal.framework */,
+				CBD87BD41DF6FAC802C5446D /* Pods_GratitudeJournalTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -259,6 +297,26 @@
 			productReference = CE08796D27862D0400C3105E /* Gratitude Journal.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CEC8D76F286A7E92003FCC49 /* GratitudeJournalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEC8D778286A7E92003FCC49 /* Build configuration list for PBXNativeTarget "GratitudeJournalTests" */;
+			buildPhases = (
+				FBD91E555312654CD56D7E82 /* [CP] Check Pods Manifest.lock */,
+				CEC8D76C286A7E92003FCC49 /* Sources */,
+				CEC8D76D286A7E92003FCC49 /* Frameworks */,
+				CEC8D76E286A7E92003FCC49 /* Resources */,
+				316914AA30146695CB2D4942 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEC8D775286A7E92003FCC49 /* PBXTargetDependency */,
+			);
+			name = GratitudeJournalTests;
+			productName = GratitudeJournalTests;
+			productReference = CEC8D770286A7E92003FCC49 /* GratitudeJournalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -266,11 +324,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					CE08796C27862D0400C3105E = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					CEC8D76F286A7E92003FCC49 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = CE08796C27862D0400C3105E;
 					};
 				};
 			};
@@ -289,6 +351,7 @@
 			projectRoot = "";
 			targets = (
 				CE08796C27862D0400C3105E /* Gratitude Journal */,
+				CEC8D76F286A7E92003FCC49 /* GratitudeJournalTests */,
 			);
 		};
 /* End PBXProject section */
@@ -304,9 +367,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEC8D76E286A7E92003FCC49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		316914AA30146695CB2D4942 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GratitudeJournalTests/Pods-GratitudeJournalTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GratitudeJournalTests/Pods-GratitudeJournalTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GratitudeJournalTests/Pods-GratitudeJournalTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4843DE5353639326A4F34CB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,6 +431,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gratitude Journal/Pods-Gratitude Journal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBD91E555312654CD56D7E82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GratitudeJournalTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -386,7 +495,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEC8D76C286A7E92003FCC49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC8D773286A7E92003FCC49 /* GratitudeJournalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEC8D775286A7E92003FCC49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE08796C27862D0400C3105E /* Gratitude Journal */;
+			targetProxy = CEC8D774286A7E92003FCC49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CE3B8AFE27F5277900E14AFD /* Localizable.strings */ = {
@@ -575,6 +700,46 @@
 			};
 			name = Release;
 		};
+		CEC8D776286A7E92003FCC49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F21562D4A4E44FA03F29F02 /* Pods-GratitudeJournalTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4CH78Z5C5G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GratitudeJournalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gratitude Journal.app/Gratitude Journal";
+			};
+			name = Debug;
+		};
+		CEC8D777286A7E92003FCC49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70C61503EE2BA1D31879DF9E /* Pods-GratitudeJournalTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4CH78Z5C5G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GratitudeJournalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gratitude Journal.app/Gratitude Journal";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,6 +757,15 @@
 			buildConfigurations = (
 				CE08798227862D0A00C3105E /* Debug */,
 				CE08798327862D0A00C3105E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEC8D778286A7E92003FCC49 /* Build configuration list for PBXNativeTarget "GratitudeJournalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC8D776286A7E92003FCC49 /* Debug */,
+				CEC8D777286A7E92003FCC49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -169,6 +169,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
             self.days = days
         }
     }
+    
     private func hourFormatter(hour: Date) -> Int {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH"
