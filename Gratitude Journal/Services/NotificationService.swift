@@ -9,7 +9,7 @@ import UIKit
 import NotificationCenter
 
 class NotificationService {
-    
+    /// create notifications scheduler
     public func notificationsScheduler(hours: Int, minute: Int, weekdays: [Int]) {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
