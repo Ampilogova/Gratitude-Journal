@@ -17,7 +17,7 @@ class EditGratitudeViewController: UIViewController, UITextViewDelegate, Alert {
         let label = UILabel()
         label.text = loc("was.grateful")
         label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .customLabelColor
+        label.textColor = .systemGray6
         label.textAlignment = .left
         label.numberOfLines = 2
         return label
@@ -27,8 +27,8 @@ class EditGratitudeViewController: UIViewController, UITextViewDelegate, Alert {
         let textView = UITextView()
         textView.backgroundColor = .clear
         textView.font = .systemFont(ofSize: 19)
-        textView.textColor = .customLabelColor
-        textView.tintColor = .customYellowColor
+        textView.textColor = .systemGray6
+        textView.tintColor = .systemYellow
         textView.textContainer.maximumNumberOfLines = 15
         textView.textContainer.lineBreakMode = .byTruncatingTail
         return textView
@@ -38,7 +38,7 @@ class EditGratitudeViewController: UIViewController, UITextViewDelegate, Alert {
         var button = UIButton()
         button.setTitle(loc("update"), for: .normal)
         button.setTitleColor(.customblackColor, for: .normal)
-        button.backgroundColor = .customYellowColor
+        button.backgroundColor = .systemYellow
         button.makeCellRounded()
         button.addTarget(self, action: #selector(update), for: .touchUpInside)
         return button
@@ -87,7 +87,7 @@ class EditGratitudeViewController: UIViewController, UITextViewDelegate, Alert {
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = .customLabelColor
+        navigationController?.navigationBar.tintColor = .systemGray6
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance

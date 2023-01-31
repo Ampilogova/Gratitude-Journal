@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct Setting {
-    let name: String
+    let title: String
     let icon: UIImage
 }
 

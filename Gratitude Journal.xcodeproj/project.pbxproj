@@ -27,7 +27,6 @@
 		CEBBD40C2788CEBA002F762B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD40B2788CEBA002F762B /* SettingsViewController.swift */; };
 		CEBBD40E2788CEF6002F762B /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD40D2788CEF6002F762B /* Setting.swift */; };
 		CEBBD4102788CF46002F762B /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD40F2788CF46002F762B /* Localize.swift */; };
-		CEBBD4132788CF9B002F762B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4122788CF9B002F762B /* SettingsCell.swift */; };
 		CEBBD4152788CFFC002F762B /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4142788CFFC002F762B /* NSObject.swift */; };
 		CEBBD4182788D560002F762B /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4172788D560002F762B /* NotificationViewController.swift */; };
 		CEBBD41A2788D580002F762B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBD4192788D57F002F762B /* NotificationService.swift */; };
@@ -79,10 +78,9 @@
 		CEB14B27278E5837002B294C /* GratitudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GratitudeService.swift; sourceTree = "<group>"; };
 		CEBBD4072787A45F002F762B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CEBBD4092787BE5D002F762B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		CEBBD40B2788CEBA002F762B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CEBBD40B2788CEBA002F762B /* SettingsViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CEBBD40D2788CEF6002F762B /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		CEBBD40F2788CF46002F762B /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
-		CEBBD4122788CF9B002F762B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		CEBBD4142788CFFC002F762B /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		CEBBD4172788D560002F762B /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		CEBBD4192788D57F002F762B /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				CEBBD40B2788CEBA002F762B /* SettingsViewController.swift */,
-				CEBBD4122788CF9B002F762B /* SettingsCell.swift */,
 				CEBBD40D2788CEF6002F762B /* Setting.swift */,
 			);
 			path = Settings;
@@ -474,7 +471,6 @@
 				CEE8117627F0262900CFC23C /* QuoteViewController.swift in Sources */,
 				CEBBD41C2788D59C002F762B /* DateCell.swift in Sources */,
 				CEE8117C27F0D5DB00CFC23C /* QuoteModel.swift in Sources */,
-				CEBBD4132788CF9B002F762B /* SettingsCell.swift in Sources */,
 				CEBBD41A2788D580002F762B /* NotificationService.swift in Sources */,
 				CE14C12E27F3BFEC00CD4CA4 /* SignUpViewController.swift in Sources */,
 				CEBBD40A2787BE5D002F762B /* TabBar.swift in Sources */,

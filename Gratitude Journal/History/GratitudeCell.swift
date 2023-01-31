@@ -12,7 +12,7 @@ class GratitudeCell: UITableViewCell {
     let date: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 28, weight: .semibold)
-        label.textColor = .customLabelColor
+        label.textColor = .systemGray6
         label.textAlignment = .left
         label.numberOfLines = 2
         return label
@@ -61,7 +61,7 @@ class GratitudeCell: UITableViewCell {
     private let blotImage2:  UIImageView = {
         var image = UIImageView()
         image.image = UIImage(named: "blot2")?.withRenderingMode(.alwaysTemplate)
-        image.tintColor = .customYellowColor
+        image.tintColor = .systemYellow
         return image
     }()
     

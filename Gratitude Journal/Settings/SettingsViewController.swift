@@ -13,9 +13,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     let gratitudeService = GratitudeService()
     
     let settings = [
-        Setting(name: loc("notifications"), icon: UIImage(systemName: "bell.square.fill")!),
-        Setting(name: loc("send.feedback"), icon: UIImage(systemName: "envelope.fill")!),
-        Setting(name: loc("log.out"), icon: UIImage(systemName: "arrowshape.turn.up.right.fill")!),
+        Setting(title: loc("notifications"), icon: UIImage(systemName: "bell.square.fill")!),
+        Setting(title: loc("send.feedback"), icon: UIImage(systemName: "envelope.fill")!),
+        Setting(title: loc("log.out"), icon: UIImage(systemName: "arrowshape.turn.up.right.fill")!),
     ]
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         settingTableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(settingTableView)
         
-        settingTableView.register(SettingsCell.self, forCellReuseIdentifier: SettingsCell.className)
+        settingTableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.className)
         settingTableView.dataSource = self
         
         settingTableView.separatorStyle = .none
@@ -45,17 +45,20 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         settings.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.className, for: indexPath) as? SettingsCell else {
-            preconditionFailure("SettingsCell can't be dequeued")
-        }
-        let setting = settings[indexPath.row]
-        cell.accessoryType = .disclosureIndicator
-        cell.configure(with: setting)
-        
-        return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+          let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.className, for: indexPath)
+          let setting = settings[indexPath.row]
+          var configuration = cell.defaultContentConfiguration()
+          configuration.text = setting.title
+          configuration.image = setting.icon
+          configuration.imageProperties.tintColor = .systemPurple
+
+          cell.accessoryType = .disclosureIndicator
+          cell.contentConfiguration = configuration
+          
+          return cell
+     }
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         var viewController = UIViewController()
         if indexPath.row == 0 {

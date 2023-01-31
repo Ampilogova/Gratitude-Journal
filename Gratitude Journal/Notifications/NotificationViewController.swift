@@ -27,7 +27,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
         let label = UILabel()
         label.text = loc("morning")
         label.font = .systemFont(ofSize: 14)
-        label.textColor = .customGrayColor
+        label.textColor = .systemGray2
         label.textAlignment = .left
         label.numberOfLines = 4
         return label
@@ -47,7 +47,7 @@ class NotificationViewController: UIViewController, DateCollectionViewDelegate, 
         let label = UILabel()
         label.text = loc("recommend")
         label.font = .systemFont(ofSize: 14)
-        label.textColor = .customGrayColor
+        label.textColor = .systemGray2
         label.textAlignment = .left
         label.numberOfLines = 4
         return label

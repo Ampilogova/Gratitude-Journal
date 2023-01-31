@@ -19,7 +19,7 @@ class GratitudeJournalTableViewController: UIViewController, UITableViewDelegate
 
      override func viewDidLoad() {
           super.viewDidLoad()
-          self.view.backgroundColor = .customBackgroundColor
+//          self.view.backgroundColor = .customBackgroundColor
           setupTableView()
           createSearchBar()
           setupNavigationBar()
@@ -46,7 +46,7 @@ class GratitudeJournalTableViewController: UIViewController, UITableViewDelegate
           tableView.register(GratitudeCell.self, forCellReuseIdentifier: GratitudeCell.className)
           tableView.delegate = self
           tableView.dataSource = self
-          tableView.backgroundColor = .customBackgroundColor
+//          tableView.backgroundColor = .customBackgroundColor
           
           tableView.translatesAutoresizingMaskIntoConstraints = false
           self.view.addSubview(tableView)
@@ -67,20 +67,20 @@ class GratitudeJournalTableViewController: UIViewController, UITableViewDelegate
           appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
           appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
           navigationController?.navigationBar.prefersLargeTitles = true
-          navigationController?.navigationBar.barTintColor = .customLabelColor
+          navigationController?.navigationBar.barTintColor = .systemGray6
           navigationController?.navigationBar.standardAppearance = appearance
           navigationController?.navigationBar.compactAppearance = appearance
           navigationController?.navigationBar.scrollEdgeAppearance = appearance
 
           let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
-          add.tintColor = .customYellowColor
+          add.tintColor = .systemYellow
           navigationItem.rightBarButtonItems = [add]
      }
      
      private func createSearchBar() {
           searchController.title = loc("Search.notes")
           searchController.searchResultsUpdater = self
-          searchController.searchBar.tintColor = .customLabelColor
+          searchController.searchBar.tintColor = .systemGray6
           searchController.searchBar.searchTextField.backgroundColor = .white
           searchController.delegate = self
           

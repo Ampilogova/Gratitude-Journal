@@ -16,7 +16,7 @@ class QuoteViewController: UIViewController {
         let label = UILabel()
         label.text = loc("quotes.day")
         label.font = .boldSystemFont(ofSize: 34)
-        label.textColor = .customblackColor
+        label.textColor = .systemGray
         label.textAlignment = .left
         label.numberOfLines = 2
         return label
@@ -25,7 +25,7 @@ class QuoteViewController: UIViewController {
     private let quoteLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 28)
-        label.textColor = .customblackColor
+        label.textColor = .systemGray
         label.textAlignment = .left
         label.numberOfLines = 10
         return label
@@ -34,7 +34,7 @@ class QuoteViewController: UIViewController {
     private let authorLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .customGrayColor
+        label.textColor = .systemGray2
         label.textAlignment = .left
         return label
     }()
@@ -48,7 +48,7 @@ class QuoteViewController: UIViewController {
     private let lineImage:  UIImageView = {
         var image = UIImageView()
         image.image = UIImage(named: "line")?.withRenderingMode(.alwaysTemplate)
-        image.tintColor = .customblackColor
+        image.tintColor = .systemGray
         return image
     }()
     

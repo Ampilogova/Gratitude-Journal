@@ -70,15 +70,15 @@ class DateCollectionView: UIViewController, UICollectionViewDataSource, UICollec
         cell.label.text = model
         
         if daySet.contains(days[indexPath.row]) {
-            cell.label.backgroundColor = .customYellowColor
+            cell.label.backgroundColor = .systemYellow
             cell.label.textColor = .customblackColor
             cell.label.layer.borderWidth = 0
             cell.label.layer.borderColor = UIColor.clear.cgColor
         } else {
             cell.label.backgroundColor = .clear
-            cell.label.textColor = .customGrayColor
+            cell.label.textColor = .systemGray2
             cell.label.layer.borderWidth = 1
-            cell.label.layer.borderColor = UIColor.customGrayColor.cgColor
+            cell.label.layer.borderColor = UIColor.systemGray2.cgColor
         }
         delegate?.daySelected(days: weekday())
         return cell

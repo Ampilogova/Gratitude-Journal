@@ -15,8 +15,7 @@ class CreateNoteViewController: UIViewController, UITextViewDelegate, Alert {
     private let label: UILabel = {
         let label = UILabel()
         label.text = loc("3.things.greatful")
-        label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .customLabelColor
+        label.font = UIFont.preferredFont(forTextStyle: .title2)
         label.textAlignment = .left
         label.numberOfLines = 2
         return label
@@ -25,10 +24,9 @@ class CreateNoteViewController: UIViewController, UITextViewDelegate, Alert {
     private let textView: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = .clear
-        textView.font = .systemFont(ofSize: 19)
-        textView.textColor = .customLabelColor
-        textView.tintColor = .customYellowColor
-        textView.textContainer.maximumNumberOfLines = 15
+        textView.font = UIFont.preferredFont(forTextStyle: .body)
+        textView.tintColor = .systemYellow
+        textView.isScrollEnabled = true
         textView.textContainer.lineBreakMode = .byTruncatingTail
         return textView
     }()
@@ -36,52 +34,52 @@ class CreateNoteViewController: UIViewController, UITextViewDelegate, Alert {
     private let button: UIButton = {
         var button = UIButton()
         button.setTitle(loc("save.note"), for: .normal)
-        button.setTitleColor(.customblackColor, for: .normal)
-        button.backgroundColor = .customYellowColor
+//        button.setTitleColor(.customblackColor, for: .normal)
+        button.backgroundColor = .systemYellow
         button.makeCellRounded()
         button.addTarget(self, action: #selector(saveData), for: .touchUpInside)
         return button
     }()
     
-    private var backgroundImage: UIImageView = {
-        let imageView = UIImageView(frame: .zero)
-        imageView.image = UIImage(named: "backgroundImage")
-        imageView.contentMode = .scaleToFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+//    private var backgroundImage: UIImageView = {
+//        let imageView = UIImageView(frame: .zero)
+//        imageView.image = UIImage(named: "backgroundImage")
+//        imageView.contentMode = .scaleToFill
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        return imageView
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
+//        setupNavigationBar()
         setupUI()
         self.textView.delegate = self
     }
     
     private func setupNavigationBar() {
-        self.title = loc("today")
+//        self.title = loc("today")
         
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .customBackgroundColor
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = .customLabelColor
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.compactAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+//        let appearance = UINavigationBarAppearance()
+//        appearance.backgroundColor = .customBackgroundColor
+//        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+//        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+//
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.tintColor = .systemGray6
+//        navigationController?.navigationBar.standardAppearance = appearance
+//        navigationController?.navigationBar.compactAppearance = appearance
+//        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     private func setupUI() {
-        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(backgroundImage)
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
+//        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(backgroundImage)
+//        NSLayoutConstraint.activate([
+//            backgroundImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//        ])
         label.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(label)
         NSLayoutConstraint.activate([

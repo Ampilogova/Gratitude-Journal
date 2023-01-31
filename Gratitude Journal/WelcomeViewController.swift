@@ -13,7 +13,7 @@ class WelcomeViewController: UIViewController {
         let label = UILabel()
         label.text = "Gratefuli"
         label.font = .boldSystemFont(ofSize: 30)
-        label.textColor = .customLabelColor
+        label.textColor = .systemGray6
         label.textAlignment = .center
         return label
     }()
@@ -22,7 +22,7 @@ class WelcomeViewController: UIViewController {
         let label = UILabel()
         label.text = loc("what.we.do")
         label.font = .boldSystemFont(ofSize: 30)
-        label.textColor = .customYellowColor
+        label.textColor = .systemYellow
         label.textAlignment = .center
         return label
     }()
@@ -31,7 +31,7 @@ class WelcomeViewController: UIViewController {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 220, height: 50))
         label.text = loc("thousand.people")
         label.font = .boldSystemFont(ofSize: 16)
-        label.textColor = .customLabelColor
+        label.textColor = .systemGray6
         label.numberOfLines = 3
         label.textAlignment = .center
         return label
@@ -41,7 +41,7 @@ class WelcomeViewController: UIViewController {
         var button = UIButton()
         button.setTitle(loc("signUp"), for: .normal)
         button.setTitleColor(.customblackColor, for: .normal)
-        button.backgroundColor = .customYellowColor
+        button.backgroundColor = .systemYellow
         button.makeCellRounded()
         NSLayoutConstraint.activate([
             button.heightAnchor.constraint(equalToConstant: 50)
@@ -54,7 +54,7 @@ class WelcomeViewController: UIViewController {
         var button = UIButton()
         button.setTitle(loc("logIn"), for: .normal)
         button.setTitleColor(.customblackColor, for: .normal)
-        button.backgroundColor = .customLabelColor
+        button.backgroundColor = .systemGray6
         button.makeCellRounded()
         NSLayoutConstraint.activate([
             button.heightAnchor.constraint(equalToConstant: 50)

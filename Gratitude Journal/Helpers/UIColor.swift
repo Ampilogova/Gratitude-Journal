@@ -9,7 +9,6 @@ import UIKit
 
 public extension UIColor {
 
-    static let customLabelColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
     
     static let cloudImageColor = UIColor(red: 180/255.0, green: 186/255.0, blue: 255/255.0, alpha: 1.0)
     

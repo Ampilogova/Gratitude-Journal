@@ -13,8 +13,8 @@ class DateCell: UICollectionViewCell {
         var label = UILabel()
         label.font = .systemFont(ofSize: 14)
         label.layer.borderWidth = 1
-        label.layer.borderColor = UIColor.customGrayColor.cgColor
-        label.textColor = .customGrayColor
+        label.layer.borderColor = UIColor.systemGray2.cgColor
+        label.textColor = .systemGray2
         label.layer.cornerRadius = 20
         label.layer.masksToBounds = true
         label.textAlignment = .center
